@@ -1,0 +1,90 @@
+{
+  "courseId": "astronomy-preview",
+  "title": "天文图像与AI：星系形态识别",
+  "community": "天文",
+  "audience": "有AI基础的跨专业学生",
+  "materialType": "survey",
+  "includeExercises": false,
+  "authoring": "authoring.mjs",
+  "sources": [
+    {
+      "id": "galaxy",
+      "title": "Dieleman, Willett & Dambre. Rotation-invariant convolutional neural networks for galaxy morphology prediction. 2015",
+      "shortCitation": "Dieleman et al., 2015",
+      "url": "https://arxiv.org/abs/1503.07077"
+    }
+  ],
+  "lessons": [
+    {
+      "id": "01",
+      "title": "从观测到形态判断",
+      "slides": [
+        {
+          "type": "cover",
+          "title": "从观测到形态判断",
+          "body": [
+            "一份星系图像识别课程的5页设计预览"
+          ],
+          "notes": "我们用星系形态识别说明科学图像和AI怎样连接。先看输入，再讨论旋转对称性，最后把研究需求写成可比较的模型任务。这是一份短预览，关注设计和制作流程。",
+          "seconds": 60,
+          "sourceIds": [
+            "galaxy"
+          ],
+          "purpose": "明确本课主题与学习对象"
+        },
+        {
+          "type": "concept",
+          "title": "观测图像怎样成为模型输入",
+          "body": [
+            "模型处理的是像素信号及其观测背景。"
+          ],
+          "notes": "一张图包含目标，也包含背景和观测带来的变化。我们先确定哪些像素属于分析对象，再固定预处理方式。不同观测条件下的图像能否比较，是后续评测需要回答的问题。",
+          "seconds": 60,
+          "sourceIds": [
+            "galaxy"
+          ],
+          "purpose": "能够解释“观测图像怎样成为模型输入”所涉及的对象、关系与输出"
+        },
+        {
+          "type": "concept",
+          "title": "同一个星系，可以有不同方向",
+          "body": [
+            "旋转对称性帮助模型聚焦形态，而不是朝向。"
+          ],
+          "notes": "把同一个星系的图像旋转，方向变了，对象身份没有变。模型应利用与研究目标有关的形态信息。图中用同一轮廓的三个方向说明这个关系。",
+          "seconds": 60,
+          "sourceIds": [
+            "galaxy"
+          ],
+          "purpose": "能够解释“同一个星系，可以有不同方向”所涉及的对象、关系与输出"
+        },
+        {
+          "type": "process",
+          "title": "从旋转视角到形态预测",
+          "body": [
+            "将多个视角的信息连接到共同的预测目标。"
+          ],
+          "notes": "Dieleman等人的研究利用平移和旋转对称性进行星系形态预测。这里抓住方法的主线：从不同旋转视角提取卷积特征，再汇总信息形成形态判断。具体性能还需回到原论文的标注与测试条件。",
+          "seconds": 60,
+          "sourceIds": [
+            "galaxy"
+          ],
+          "purpose": "能够解释“从旋转视角到形态预测”所涉及的对象、关系与输出"
+        },
+        {
+          "type": "summary",
+          "title": "先固定研究问题，再比较模型",
+          "body": [
+            "输入、输出与评测口径共同决定比较是否有意义。"
+          ],
+          "notes": "读新的天文AI论文时，先找研究对象和输入约定，再看方法利用了什么结构，最后检查输出和评测条件。这样的顺序能把模型名称转成一个明确的研究接口。",
+          "seconds": 60,
+          "sourceIds": [
+            "galaxy"
+          ],
+          "purpose": "回收本课输入、方法与任务之间的联系"
+        }
+      ]
+    }
+  ]
+}

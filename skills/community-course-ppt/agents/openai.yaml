@@ -1,6 +1,6 @@
 interface:
   display_name: "社区课程 PPT"
-  short_description: "根据课程材料讨论选题，制作科学与AI课程PPT、PDF和逐页讲稿"
-  default_prompt: "使用 $community-course-ppt 阅读当前仓库的课程材料，与我讨论选题并制作讲课PPT。"
+  short_description: "根据材料讨论课程、自主设计，制作PPT、PDF和逐页讲稿"
+  default_prompt: "使用 $community-course-ppt 阅读当前仓库的课程材料，与我讨论选题，自主设计并制作讲课PPT。"
 policy:
   allow_implicit_invocation: true

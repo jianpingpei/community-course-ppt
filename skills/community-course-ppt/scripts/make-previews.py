@@ -1,4 +1,4 @@
-"""Build browsable previews from real PowerPoint PNG exports, never from a mockup."""
+"""Build browsable previews from actual exported page images, never authoring mockups."""
 
 import argparse, html, json, re, os
 from pathlib import Path

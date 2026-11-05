@@ -1,25 +1,24 @@
-# 网页端上传与运行
+# 上传到 WorkBuddy 与试用
 
-上传 release/community-course-ppt.zip，不上传整个仓库或仅上传 SKILL.md。包内为单一 community-course-ppt/ 目录，包含脚本、依赖清单、格式指引和一套已适配灰色原生模板；不包含生物样例、node_modules 或开发机器路径。解压后不依赖原仓库。上传包小于5 MiB（5,242,880字节）；为控制体积，包内模板移除内嵌字体及相应引用，原始模板、页面、图片和版式保留。请在运行环境安装所用中文字体。
+上传release/community-course-ppt.zip，不上传整仓库。包内只有community-course-ppt目录，包含SKILL.md、按需参考、脚本和公开依赖清单；不带模板、课程成品、科学图片、node_modules、内部运行时。打包硬上限5,242,880字节。
 
-先确认宿主能执行命令、读写任务文件、安装依赖。能导入技能不等于能执行脚本。无执行工具时不能生成实际 PPTX，不以 Markdown 大纲代替成品。
+## 使用
 
-在技能实际解压目录安装依赖（不预设 ~/.agents 或 Windows 路径）：
+通过“技能 → 添加技能 → 上传技能”导入。首先让Agent确认已加载此skill，并检查当前宿主的SlideP命令、版本和实际创建能力。不要预设本机目录、账号版本或内部registry可用。
 
-```sh
-npm ci --ignore-scripts --prefix "<SKILL_DIR>"
-python -m pip install -r "<SKILL_DIR>/requirements.txt"
-python "<SKILL_DIR>/scripts/build_course.py" --course "<WORKSPACE>/courses/<course-id>/course.json"
-```
+建议直接说：
 
-需要 Node.js 20+、Python 3.10+、LibreOffice 和中文字体。Debian/Ubuntu 且有安装权限时可使用系统包 libreoffice-impress 和 fonts-noto-cjk；没有权限时使用宿主已有导出工具，或说明缺失项。不要自动要求用户购买 Office。预览字体可通过 COURSE_PPT_FONT 指定字体文件；幻灯片字体也需在渲染环境中可用。
+> 使用community-course-ppt，先检查当前制作工具，再阅读我上传的材料。与我确定课程主题和课时安排，先制定课程设计方案，再制作PPT、PDF和逐页中文讲稿。不要沿用生物样例的配色和版式，不用内置PPT模板。
 
-Python 入口使用 LibreOffice 导出最终 PPTX，再由 PyMuPDF 渲染 PDF 页面并制作预览；Windows 已装 PowerPoint 时仍可使用 build-course.ps1。不同导出器可能导致换行变化，必须检查最终 PDF，不能沿用其他环境的视觉验收。
+SlideP可用时遵循slidep.md，不必为它安装公开路线全部依赖。没有SlideP时，Agent采用pptxgenjs.md，安装公开依赖并确认PDF导出器。无执行工具不能交付真实PPTX；无法导出PDF须明确说明，不用大纲代替文件。
 
-仅在用户明确接受暂不导出 PDF 时使用 --pptx-only。validation.json 会记录导出器、PDF 是否生成及待完成的视觉检查。缺少 LibreOffice 的默认调用失败，不把不完整输出标为完成。
+## 一次真实试用验收
 
-首次使用建议提示：“使用 community-course-ppt，先检查运行环境和依赖，再阅读我上传的材料，与我确定课程主题和课时，制作可编辑 PPTX、PDF 和逐页讲稿。”
+1. 上传ZIP并启用；上传一份公开科学材料，不依赖本工具源码仓库。
+2. 先让Agent阅读并提出课程候选，观察是否只问缺失问题。
+3. 为快速试用，明确要求一课时5页短预览（这是测试用例，不是默认完整课程），无练习，包含封面、科学图、对比或数据、总结，带讲稿。
+4. 查看DESIGN.md与实际页面，确认是按题材设计，封面课程名正确，页面不是直接复用生物样例。
+5. 检查所用引擎、逐页诊断、真实页数、备注、字体和图片，能否下载可编辑PPTX。PDF没有生成时不能宣称已完成。
+6. 带回PPTX、PDF（若有）、DESIGN.md、validation.json以及准确错误信息。不要传账号令牌、内部包或整份宿主配置。收到结果后修正并重新验证。
 
-WorkBuddy 上传路径为“技能 → 添加技能 → 上传技能”。官方文档未在此说明具体账号网页沙箱的运行时与上传大小限制；须以实际界面和运行结果为准。导入若报错，保留准确错误用于定位，不能承诺未经实际测试的网页版兼容性。
-
-为满足上传限制，网页包只含wps-16。不同课程需要其他模板时使用用户上传的PPTX并检查适配，不声称本包自带多套可轮换模板。本机安装仍保留完整模板库。
+当前状态：公开路线在本机Windows验证；SlideP流程仅有文档与受控命令测试，WorkBuddy真实验收待用户试用。Linux/macOS实际渲染也需在对应环境验证，不能用本机PowerPoint结果代替。

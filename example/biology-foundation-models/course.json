@@ -2,7 +2,6 @@
   "title": "生物大模型：序列、蛋白质、细胞与跨模态",
   "community": "生物",
   "audience": "有 AI 基础的跨专业学生",
-  "themeId": "research-notes",
   "materialType": "survey",
   "verifiedAsOf": "2026-11-05",
   "sources": [
@@ -10,97 +9,113 @@
       "id": "survey",
       "title": "Wang et al. Large Language Models in Bioinformatics: A Survey. ACL Findings, 2025",
       "url": "https://aclanthology.org/2025.findings-acl.184/",
-      "shortCitation": "Wang et al., ACL 2025"
+      "shortCitation": "Wang et al., ACL 2025",
+      "displayTitle": "生物信息大模型综述"
     },
     {
       "id": "omics",
       "title": "Foundation models in omics research: a comprehensive survey. Briefings in Bioinformatics, 2026",
       "url": "https://academic.oup.com/bib/article/27/4/bbag439/8766653",
-      "shortCitation": "组学基础模型综述, 2026"
+      "shortCitation": "组学基础模型综述, 2026",
+      "displayTitle": "组学基础模型综述"
     },
     {
       "id": "nt",
       "title": "Dalla-Torre et al. Nucleotide Transformer: building and evaluating robust foundation models for human genomics. Nature Methods, 2025",
       "url": "https://www.nature.com/articles/s41592-024-02523-z",
-      "shortCitation": "Dalla-Torre et al., Nat. Methods 2025"
+      "shortCitation": "Dalla-Torre et al., Nat. Methods 2025",
+      "displayTitle": "Nucleotide Transformer：人类基因组表示"
     },
     {
       "id": "evo2",
       "title": "Genome modelling and design across all domains of life with Evo 2. Nature, 2026",
       "url": "https://www.nature.com/articles/s41586-026-10176-5",
-      "shortCitation": "Evo 2, Nature 2026"
+      "shortCitation": "Evo 2, Nature 2026",
+      "displayTitle": "Evo 2：跨生命领域的基因组建模"
     },
     {
       "id": "rna",
       "title": "Penić et al. RiNALMo: general-purpose RNA language models can generalize well on structure prediction tasks. Nature Communications, 2025",
       "url": "https://www.nature.com/articles/s41467-025-60872-5",
-      "shortCitation": "RiNALMo, Nat. Commun. 2025"
+      "shortCitation": "RiNALMo, Nat. Commun. 2025",
+      "displayTitle": "RiNALMo：RNA语言模型与结构预测"
     },
     {
       "id": "esm3",
       "title": "Hayes et al. Simulating 500 million years of evolution with a language model. Science, 2025",
       "url": "https://www.science.org/doi/10.1126/science.ads0018",
-      "shortCitation": "Hayes et al., Science 2025"
+      "shortCitation": "Hayes et al., Science 2025",
+      "displayTitle": "ESM3：蛋白质多模态生成"
     },
     {
       "id": "esm3official",
       "title": "EvolutionaryScale. ESM3 release and method overview",
       "url": "https://www.evolutionaryscale.ai/blog/esm3-release",
-      "shortCitation": "EvolutionaryScale, ESM3"
+      "shortCitation": "EvolutionaryScale, ESM3",
+      "displayTitle": "ESM3方法与公开模型说明"
     },
     {
       "id": "af3",
       "title": "Abramson et al. Accurate structure prediction of biomolecular interactions with AlphaFold 3. Nature, 2024",
       "url": "https://www.nature.com/articles/s41586-024-07487-w",
-      "shortCitation": "Abramson et al., Nature 2024"
+      "shortCitation": "Abramson et al., Nature 2024",
+      "displayTitle": "AlphaFold 3：生物分子相互作用结构"
     },
     {
       "id": "scgpt",
       "title": "Cui et al. scGPT: toward building a foundation model for single-cell multi-omics using generative AI. Nature Methods, 2024",
       "url": "https://www.nature.com/articles/s41592-024-02201-0",
-      "shortCitation": "Cui et al., Nat. Methods 2024"
+      "shortCitation": "Cui et al., Nat. Methods 2024",
+      "displayTitle": "scGPT：单细胞多组学基础模型"
     },
     {
       "id": "geneformer",
       "title": "Theodoris et al. Transfer learning enables predictions in network biology. Nature, 2023",
       "url": "https://www.nature.com/articles/s41586-023-06139-9",
-      "shortCitation": "Theodoris et al., Nature 2023"
+      "shortCitation": "Theodoris et al., Nature 2023",
+      "displayTitle": "Geneformer：网络生物学迁移学习"
     },
     {
       "id": "niche",
       "title": "Tejada-Lapuerta et al. Nicheformer: a foundation model for single-cell and spatial omics. Nature Methods, 2025",
       "url": "https://www.nature.com/articles/s41592-025-02814-z",
-      "shortCitation": "Nicheformer, Nat. Methods 2025"
+      "shortCitation": "Nicheformer, Nat. Methods 2025",
+      "displayTitle": "Nicheformer：单细胞与空间组学"
     },
     {
       "id": "luca",
       "title": "Generalized biological foundation model with unified nucleic acid and protein language. Nature Machine Intelligence, 2025",
       "url": "https://www.nature.com/articles/s42256-025-01044-4",
-      "shortCitation": "LucaOne, Nat. Mach. Intell. 2025"
+      "shortCitation": "LucaOne, Nat. Mach. Intell. 2025",
+      "displayTitle": "LucaOne：统一核酸与蛋白质语言"
     },
     {
       "id": "dnabench",
       "title": "Benchmarking DNA foundation models for genomic and genetic tasks. Nature Communications, 2025",
       "url": "https://www.nature.com/articles/s41467-025-65823-8",
-      "shortCitation": "DNA模型评测, Nat. Commun. 2025"
+      "shortCitation": "DNA模型评测, Nat. Commun. 2025",
+      "displayTitle": "DNA基础模型的基因组任务评测"
     },
     {
       "id": "cellbench",
       "title": "Zero-shot evaluation reveals limitations of single-cell foundation models. Genome Biology, 2025",
       "url": "https://doi.org/10.1186/s13059-025-03574-x",
-      "shortCitation": "单细胞模型评测, Genome Biol. 2025"
+      "shortCitation": "单细胞模型评测, Genome Biol. 2025",
+      "displayTitle": "单细胞基础模型的零样本评测"
     },
     {
       "id": "multimodal",
       "title": "Towards multimodal foundation models in molecular cell biology. Nature, 2025",
       "url": "https://doi.org/10.1038/s41586-025-08710-y",
-      "shortCitation": "多模态细胞模型展望, Nature 2025"
+      "shortCitation": "多模态细胞模型展望, Nature 2025",
+      "displayTitle": "分子细胞生物学的跨模态基础模型"
     },
     {
       "id": "onescience",
       "title": "光合开发者社区 OneScience：科学计算与领域模型入口",
       "url": "https://developer.sourcefind.cn/onescience",
-      "shortCitation": "光合开发者社区 OneScience"
+      "shortCitation": "光合开发者社区 OneScience",
+      "displayTitle": "OneScience：科学计算与领域模型入口"
     }
   ],
   "lessons": [
@@ -120,7 +135,8 @@
             "survey"
           ],
           "seconds": 20,
-          "contentId": "01-01"
+          "contentId": "01-01",
+          "purpose": "明确本课主题与学习对象"
         },
         {
           "type": "concept",
@@ -128,7 +144,7 @@
           "body": [
             "序列先转成上下文表示，再连接不同生物任务。"
           ],
-          "notes": "这一课沿着输入、学习、输出三步展开。输入部分会把碱基和token分开，因为模型看到的单元取决于切分方式。学习部分用一次遮盖恢复和一次续写比较两种训练目标。输出部分回到具体的生物任务，大家会亲手读配对表，并计算一次配对预测的精确率和召回率。",
+          "notes": "这一课沿着输入、学习、输出三步展开。输入部分会把碱基和token分开，因为模型看到的单元取决于切分方式。学习部分用一次遮盖恢复和一次续写比较两种训练目标。输出部分回到具体的生物任务，我们会读一张配对表，再沿着计算过程解释精确率与召回率。",
           "sourceIds": [
             "survey"
           ],
@@ -143,7 +159,8 @@
           "seconds": 35,
           "contentId": "01-02",
           "layout": "visual",
-          "caption": "相同编码器可连接不同输出；任务头与标签共同决定具体用途"
+          "caption": "相同编码器可连接不同输出；任务头与标签共同决定具体用途",
+          "purpose": "能够解释“本课要回答的问题”所涉及的对象、关系与输出"
         },
         {
           "type": "figure",
@@ -158,20 +175,12 @@
           ],
           "seconds": 50,
           "contentId": "01-03",
-          "figure": {
-            "path": "assets/nt1.png",
-            "crop": [
-              0.4961411245865491,
-              0.6168446026097272,
-              0.503858875413451,
-              0.3831553973902728
-            ],
-            "alt": "DNA、RNA 与蛋白质",
-            "credit": "Dalla-Torre et al., Nat. Methods 2025，Fig. 1",
-            "sourceUrl": "https://www.nature.com/articles/s41592-024-02523-z"
+          "layout": "visual",
+          "caption": "编码链 DNA 经转录与翻译连接到氨基酸序列",
+          "diagram": {
+            "kind": "translation"
           },
-          "layout": "paper-side",
-          "caption": "DNA局部区域对应调控、剪接等不同任务"
+          "purpose": "能够解释“DNA、RNA 与蛋白质”所涉及的对象、关系与输出"
         },
         {
           "type": "figure",
@@ -198,7 +207,8 @@
             "sourceUrl": "https://www.nature.com/articles/s41586-026-10176-5"
           },
           "layout": "paper-wide",
-          "caption": "从局部RNA、基因到染色体，所需上下文尺度逐渐增大"
+          "caption": "从局部RNA、基因到染色体，所需上下文尺度逐渐增大",
+          "purpose": "能够解释“序列窗口决定模型能看到什么”所涉及的对象、关系与输出"
         },
         {
           "type": "case",
@@ -221,7 +231,8 @@
             ]
           },
           "seconds": 50,
-          "contentId": "01-05"
+          "contentId": "01-05",
+          "purpose": "能够解释“一次T→G替换怎样进入模型”所涉及的对象、关系与输出"
         },
         {
           "type": "process",
@@ -259,7 +270,8 @@
               ]
             ]
           },
-          "contentId": "01-06"
+          "contentId": "01-06",
+          "purpose": "能够解释“序列如何变成 token”所涉及的对象、关系与输出"
         },
         {
           "type": "concept",
@@ -277,7 +289,8 @@
           "seconds": 50,
           "contentId": "01-07",
           "layout": "visual",
-          "caption": "保留位置维度可做位点预测，汇聚后可描述整段序列"
+          "caption": "保留位置维度可做位点预测，汇聚后可描述整段序列",
+          "purpose": "能够解释“token怎样变成上下文向量”所涉及的对象、关系与输出"
         },
         {
           "type": "process",
@@ -297,7 +310,8 @@
           "seconds": 50,
           "caption": "训练标签来自原序列；优化目标是提高被遮盖碱基的预测概率。",
           "layout": "visual",
-          "contentId": "01-08"
+          "contentId": "01-08",
+          "purpose": "能够解释“掩码预训练学到什么”所涉及的对象、关系与输出"
         },
         {
           "type": "figure",
@@ -325,7 +339,8 @@
             "sourceUrl": "https://www.nature.com/articles/s41592-024-02523-z"
           },
           "layout": "paper-side",
-          "caption": "切分、遮盖与上下文编码"
+          "caption": "切分、遮盖与上下文编码",
+          "purpose": "能够解释“一次掩码训练怎样产生学习信号”所涉及的对象、关系与输出"
         },
         {
           "type": "figure",
@@ -352,7 +367,8 @@
             "sourceUrl": "https://www.nature.com/articles/s41592-024-02523-z"
           },
           "layout": "paper-wide",
-          "caption": "位置级表示接入语言模型头，恢复被遮盖token"
+          "caption": "位置级表示接入语言模型头，恢复被遮盖token",
+          "purpose": "能够解释“Nucleotide Transformer”所涉及的对象、关系与输出"
         },
         {
           "type": "concept",
@@ -389,7 +405,8 @@
             ]
           },
           "seconds": 50,
-          "contentId": "01-11"
+          "contentId": "01-11",
+          "purpose": "能够解释“NT的表示可以接到哪些任务”所涉及的对象、关系与输出"
         },
         {
           "type": "figure",
@@ -416,7 +433,8 @@
             "sourceUrl": "https://www.nature.com/articles/s41592-024-02523-z"
           },
           "layout": "paper-wide",
-          "caption": "冻结的预训练模块与可训练预测头分工"
+          "caption": "冻结的预训练模块与可训练预测头分工",
+          "purpose": "能够解释“从表示到一个任务”所涉及的对象、关系与输出"
         },
         {
           "type": "figure",
@@ -443,7 +461,8 @@
             "sourceUrl": "https://www.nature.com/articles/s41586-026-10176-5"
           },
           "layout": "paper-wide",
-          "caption": "图中列出基因与蛋白质层面的部分应用方向"
+          "caption": "图中列出基因与蛋白质层面的部分应用方向",
+          "purpose": "能够解释“Evo 2 的建模方向”所涉及的对象、关系与输出"
         },
         {
           "type": "concept",
@@ -461,7 +480,8 @@
             "kind": "probability-product"
           },
           "layout": "visual",
-          "caption": "生成时逐位采样，评分时沿给定序列累计对数概率"
+          "caption": "生成时逐位采样，评分时沿给定序列累计对数概率",
+          "purpose": "能够解释“序列概率把局部预测连接起来”所涉及的对象、关系与输出"
         },
         {
           "type": "compare",
@@ -499,7 +519,8 @@
             ]
           },
           "seconds": 50,
-          "contentId": "01-15"
+          "contentId": "01-15",
+          "purpose": "能够解释“两类预训练任务”所涉及的对象、关系与输出"
         },
         {
           "type": "figure",
@@ -527,7 +548,8 @@
             "sourceUrl": "https://www.nature.com/articles/s41467-025-60872-5"
           },
           "layout": "paper-side",
-          "caption": "RNA数据经过遮盖后进入上下文编码器"
+          "caption": "RNA数据经过遮盖后进入上下文编码器",
+          "purpose": "能够解释“RNA任务把序列连接到配对关系”所涉及的对象、关系与输出"
         },
         {
           "type": "figure",
@@ -559,7 +581,8 @@
             ]
           },
           "layout": "rna",
-          "contentId": "01-17"
+          "contentId": "01-17",
+          "purpose": "能够解释“读懂一条RNA的茎与环”所涉及的对象、关系与输出"
         },
         {
           "type": "concept",
@@ -600,7 +623,8 @@
             ]
           },
           "seconds": 50,
-          "contentId": "01-18"
+          "contentId": "01-18",
+          "purpose": "能够解释“配对表与括号串怎样对应”所涉及的对象、关系与输出"
         },
         {
           "type": "concept",
@@ -641,7 +665,8 @@
             ]
           },
           "seconds": 50,
-          "contentId": "01-19"
+          "contentId": "01-19",
+          "purpose": "能够解释“把位置配对写成二维矩阵”所涉及的对象、关系与输出"
         },
         {
           "type": "case",
@@ -667,7 +692,8 @@
           "seconds": 50,
           "contentId": "01-20",
           "layout": "visual",
-          "caption": "相近序列所在的家族整体划分，减少训练与测试之间的近邻泄漏"
+          "caption": "相近序列所在的家族整体划分，减少训练与测试之间的近邻泄漏",
+          "purpose": "能够解释“让测试集对应新的序列家族”所涉及的对象、关系与输出"
         },
         {
           "type": "concept",
@@ -704,7 +730,8 @@
                 "F1＝2/3"
               ]
             ]
-          }
+          },
+          "purpose": "能够解释“配对预测的精确率与召回率”所涉及的对象、关系与输出"
         },
         {
           "type": "figure",
@@ -712,7 +739,7 @@
           "body": [
             "RiNALMo的表示可连接结构、分类和表达相关任务。"
           ],
-          "notes": "沿图中下方的分支阅读。二级结构任务使用位置级表示，预测位置对关系。RNA分类汇聚整条序列的表示，输出类别。另一些任务输出与表达或翻译相关的数值。共享的是RNA编码器，变化的是任务头和标签。",
+          "notes": "这张图并列展示二级结构与RNA分类两类任务。二级结构任务使用位置级表示，预测位置对关系。RNA分类汇聚整条序列的表示，输出类别。另一些任务输出与表达或翻译相关的数值。共享的是RNA编码器，变化的是任务头和标签。",
           "sourceIds": [
             "rna"
           ],
@@ -731,7 +758,8 @@
             "sourceUrl": "https://www.nature.com/articles/s41467-025-60872-5"
           },
           "layout": "paper-wide",
-          "caption": "位置级表示与序列级表示分别连接不同任务头"
+          "caption": "位置级表示与序列级表示分别连接不同任务头",
+          "purpose": "能够解释“RiNALMo的下游任务”所涉及的对象、关系与输出"
         },
         {
           "type": "summary",
@@ -749,7 +777,8 @@
             "rna"
           ],
           "seconds": 50,
-          "contentId": "01-23"
+          "contentId": "01-23",
+          "purpose": "回收本课输入、方法与任务之间的联系"
         },
         {
           "type": "references",
@@ -764,7 +793,8 @@
             "dnabench"
           ],
           "seconds": 20,
-          "contentId": "01-24"
+          "contentId": "01-24",
+          "purpose": "提供继续阅读与证据追溯入口"
         }
       ],
       "durationSeconds": 1080,
@@ -796,7 +826,8 @@
             "af3"
           ],
           "seconds": 20,
-          "contentId": "02-01"
+          "contentId": "02-01",
+          "purpose": "明确本课主题与学习对象"
         },
         {
           "type": "concept",
@@ -826,7 +857,8 @@
           "seconds": 35,
           "contentId": "02-02",
           "layout": "visual",
-          "caption": "ESM3侧重条件生成，AF3预测给定组分的联合结构"
+          "caption": "ESM3侧重条件生成，AF3预测给定组分的联合结构",
+          "purpose": "能够解释“本课要回答的问题”所涉及的对象、关系与输出"
         },
         {
           "type": "concept",
@@ -864,7 +896,8 @@
               ]
             ]
           },
-          "contentId": "02-03"
+          "contentId": "02-03",
+          "purpose": "能够解释“蛋白质的三个观察角度”所涉及的对象、关系与输出"
         },
         {
           "type": "concept",
@@ -901,7 +934,8 @@
             ]
           },
           "seconds": 50,
-          "contentId": "02-04"
+          "contentId": "02-04",
+          "purpose": "能够解释“M、K、T分别代表哪种氨基酸”所涉及的对象、关系与输出"
         },
         {
           "type": "case",
@@ -939,7 +973,8 @@
                 "联合空间结构"
               ]
             ]
-          }
+          },
+          "purpose": "能够解释“先写清楚研究问题”所涉及的对象、关系与输出"
         },
         {
           "type": "process",
@@ -981,7 +1016,8 @@
               ]
             ]
           },
-          "contentId": "02-06"
+          "contentId": "02-06",
+          "purpose": "能够解释“蛋白质表示学习”所涉及的对象、关系与输出"
         },
         {
           "type": "figure",
@@ -1009,7 +1045,8 @@
             "sourceUrl": "https://www.nature.com/articles/s41586-024-07487-w"
           },
           "layout": "paper-side",
-          "caption": "蛋白质与核酸的空间排列来自AF3论文案例"
+          "caption": "蛋白质与核酸的空间排列来自AF3论文案例",
+          "purpose": "能够解释“一维序列与三维接触怎样联系”所涉及的对象、关系与输出"
         },
         {
           "type": "figure",
@@ -1036,7 +1073,8 @@
             "sourceUrl": "https://www.evolutionaryscale.ai/blog/esm3-release"
           },
           "layout": "paper-wide",
-          "caption": "序列记录残基，结构编码几何，功能轨道补充注释"
+          "caption": "序列记录残基，结构编码几何，功能轨道补充注释",
+          "purpose": "能够解释“ESM3 的多模态范围”所涉及的对象、关系与输出"
         },
         {
           "type": "concept",
@@ -1074,7 +1112,8 @@
             ]
           },
           "seconds": 50,
-          "contentId": "02-09"
+          "contentId": "02-09",
+          "purpose": "能够解释“三条信息轨道怎样进入ESM3”所涉及的对象、关系与输出"
         },
         {
           "type": "process",
@@ -1093,7 +1132,8 @@
           "seconds": 50,
           "layout": "visual",
           "caption": "已知条件保持固定；生成步骤持续增加候选中可确定的信息。",
-          "contentId": "02-10"
+          "contentId": "02-10",
+          "purpose": "能够解释“从条件到候选蛋白”所涉及的对象、关系与输出"
         },
         {
           "type": "figure",
@@ -1121,7 +1161,8 @@
             "sourceUrl": "https://www.evolutionaryscale.ai/blog/esm3-release"
           },
           "layout": "paper-side",
-          "caption": "几何注意力将结构条件连接到联合建模"
+          "caption": "几何注意力将结构条件连接到联合建模",
+          "purpose": "能够解释“多轮补全如何形成完整候选”所涉及的对象、关系与输出"
         },
         {
           "type": "figure",
@@ -1148,7 +1189,8 @@
             "sourceUrl": "https://www.evolutionaryscale.ai/blog/esm3-release"
           },
           "layout": "paper-wide",
-          "caption": "第一轮B8继续进入下一轮生成与筛选，得到C10（esmGFP）"
+          "caption": "第一轮B8继续进入下一轮生成与筛选，得到C10（esmGFP）",
+          "purpose": "能够解释“用荧光测量连接生成与筛选”所涉及的对象、关系与输出"
         },
         {
           "type": "figure",
@@ -1176,7 +1218,8 @@
             "sourceUrl": "https://www.evolutionaryscale.ai/blog/esm3-release"
           },
           "layout": "paper-side",
-          "caption": "esmGFP结构展示，EvolutionaryScale"
+          "caption": "esmGFP结构展示，EvolutionaryScale",
+          "purpose": "能够解释“esmGFP案例：生成与荧光测量相衔接”所涉及的对象、关系与输出"
         },
         {
           "type": "figure",
@@ -1204,7 +1247,8 @@
             "sourceUrl": "https://www.nature.com/articles/s41586-024-07487-w"
           },
           "layout": "paper-side",
-          "caption": "模型输出不同分子组分之间的相对空间排列"
+          "caption": "模型输出不同分子组分之间的相对空间排列",
+          "purpose": "能够解释“AlphaFold 3 的问题设定”所涉及的对象、关系与输出"
         },
         {
           "type": "figure",
@@ -1231,7 +1275,8 @@
             "sourceUrl": "https://www.nature.com/articles/s41586-024-07487-w"
           },
           "layout": "paper-wide",
-          "caption": "Pairformer提供条件表示，扩散模块生成原子坐标"
+          "caption": "Pairformer提供条件表示，扩散模块生成原子坐标",
+          "purpose": "能够解释“结构生成怎样逐步调整空间坐标”所涉及的对象、关系与输出"
         },
         {
           "type": "figure",
@@ -1268,7 +1313,8 @@
               ]
             ]
           },
-          "contentId": "02-16"
+          "contentId": "02-16",
+          "purpose": "能够解释“复合物结构意味着什么”所涉及的对象、关系与输出"
         },
         {
           "type": "concept",
@@ -1305,7 +1351,8 @@
             ]
           },
           "seconds": 50,
-          "contentId": "02-17"
+          "contentId": "02-17",
+          "purpose": "能够解释“pLDDT与PAE分别帮助读什么”所涉及的对象、关系与输出"
         },
         {
           "type": "compare",
@@ -1343,7 +1390,8 @@
             ]
           },
           "seconds": 50,
-          "contentId": "02-18"
+          "contentId": "02-18",
+          "purpose": "能够解释“ESM3 与 AF3 如何分工”所涉及的对象、关系与输出"
         },
         {
           "type": "case",
@@ -1368,7 +1416,8 @@
           "seconds": 50,
           "contentId": "02-19",
           "layout": "visual",
-          "caption": "实验结果可用于调整条件，继续筛选下一轮候选"
+          "caption": "实验结果可用于调整条件，继续筛选下一轮候选",
+          "purpose": "能够解释“一个候选的筛选流程”所涉及的对象、关系与输出"
         },
         {
           "type": "concept",
@@ -1406,7 +1455,8 @@
             ]
           },
           "seconds": 50,
-          "contentId": "02-20"
+          "contentId": "02-20",
+          "purpose": "能够解释“把候选筛选写成一张检查表”所涉及的对象、关系与输出"
         },
         {
           "type": "concept",
@@ -1444,7 +1494,8 @@
                 "实际实验测量"
               ]
             ]
-          }
+          },
+          "purpose": "能够解释“让指标对应序列、结构与功能”所涉及的对象、关系与输出"
         },
         {
           "type": "figure",
@@ -1472,7 +1523,8 @@
             "sourceUrl": "https://www.nature.com/articles/s41586-024-07487-w"
           },
           "layout": "paper-side",
-          "caption": "着色预测结构与灰色参考结构的局部对照"
+          "caption": "着色预测结构与灰色参考结构的局部对照",
+          "purpose": "能够解释“分子界面的局部阅读”所涉及的对象、关系与输出"
         },
         {
           "type": "summary",
@@ -1489,7 +1541,8 @@
             "af3"
           ],
           "seconds": 50,
-          "contentId": "02-23"
+          "contentId": "02-23",
+          "purpose": "回收本课输入、方法与任务之间的联系"
         },
         {
           "type": "references",
@@ -1502,7 +1555,8 @@
             "af3"
           ],
           "seconds": 20,
-          "contentId": "02-24"
+          "contentId": "02-24",
+          "purpose": "提供继续阅读与证据追溯入口"
         }
       ],
       "durationSeconds": 1080,
@@ -1534,7 +1588,8 @@
             "niche"
           ],
           "seconds": 20,
-          "contentId": "03-01"
+          "contentId": "03-01",
+          "purpose": "明确本课主题与学习对象"
         },
         {
           "type": "concept",
@@ -1558,7 +1613,8 @@
           "seconds": 35,
           "contentId": "03-02",
           "layout": "visual",
-          "caption": "细胞注释预测身份；空间相关任务读取区域或邻域信息"
+          "caption": "细胞注释预测身份；空间相关任务读取区域或邻域信息",
+          "purpose": "能够解释“本课要回答的问题”所涉及的对象、关系与输出"
         },
         {
           "type": "concept",
@@ -1592,7 +1648,8 @@
               ]
             ]
           },
-          "takeaway": "同一个T细胞由静息转为激活时，细胞类型仍是T细胞。"
+          "takeaway": "同一个T细胞由静息转为激活时，细胞类型仍是T细胞。",
+          "purpose": "能够解释“细胞类型与细胞状态”所涉及的对象、关系与输出"
         },
         {
           "type": "concept",
@@ -1611,7 +1668,8 @@
             "kind": "cell-state"
           },
           "layout": "visual",
-          "caption": "类型注释关注稳定身份，状态分析关注表达模式的变化"
+          "caption": "类型注释关注稳定身份，状态分析关注表达模式的变化",
+          "purpose": "能够解释“一个T细胞可以处于不同状态”所涉及的对象、关系与输出"
         },
         {
           "type": "case",
@@ -1652,7 +1710,8 @@
             ]
           },
           "seconds": 50,
-          "contentId": "03-05"
+          "contentId": "03-05",
+          "purpose": "能够解释“读一张表达矩阵”所涉及的对象、关系与输出"
         },
         {
           "type": "concept",
@@ -1690,7 +1749,8 @@
             ]
           },
           "seconds": 50,
-          "contentId": "03-06"
+          "contentId": "03-06",
+          "purpose": "能够解释“从计数到模型输入经历什么”所涉及的对象、关系与输出"
         },
         {
           "type": "process",
@@ -1727,7 +1787,8 @@
               ]
             ]
           },
-          "contentId": "03-07"
+          "contentId": "03-07",
+          "purpose": "能够解释“从表达矩阵到模型输入”所涉及的对象、关系与输出"
         },
         {
           "type": "figure",
@@ -1755,7 +1816,8 @@
             "sourceUrl": "https://www.nature.com/articles/s41592-024-02201-0"
           },
           "layout": "paper-side",
-          "caption": "输入表示由基因、表达值及条件信息组合"
+          "caption": "输入表示由基因、表达值及条件信息组合",
+          "purpose": "能够解释“scGPT 的表示思路”所涉及的对象、关系与输出"
         },
         {
           "type": "figure",
@@ -1783,7 +1845,8 @@
             "sourceUrl": "https://www.nature.com/articles/s41592-024-02201-0"
           },
           "layout": "paper-side",
-          "caption": "注意力连接可见信息，前馈网络继续变换表示"
+          "caption": "注意力连接可见信息，前馈网络继续变换表示",
+          "purpose": "能够解释“遮盖表达信息怎样训练细胞表示”所涉及的对象、关系与输出"
         },
         {
           "type": "figure",
@@ -1810,7 +1873,8 @@
             "sourceUrl": "https://www.nature.com/articles/s41592-024-02201-0"
           },
           "layout": "paper-wide",
-          "caption": "任务监督把预训练表示接到新的细胞数据上"
+          "caption": "任务监督把预训练表示接到新的细胞数据上",
+          "purpose": "能够解释“细胞注释怎样完成”所涉及的对象、关系与输出"
         },
         {
           "type": "concept",
@@ -1842,7 +1906,8 @@
             ]
           },
           "seconds": 50,
-          "contentId": "03-11"
+          "contentId": "03-11",
+          "purpose": "能够解释“细胞注释结果的混淆矩阵”所涉及的对象、关系与输出"
         },
         {
           "type": "compare",
@@ -1880,7 +1945,8 @@
             ]
           },
           "seconds": 50,
-          "contentId": "03-12"
+          "contentId": "03-12",
+          "purpose": "能够解释“Geneformer 的输入对照”所涉及的对象、关系与输出"
         },
         {
           "type": "concept",
@@ -1917,7 +1983,8 @@
             ]
           },
           "seconds": 50,
-          "contentId": "03-13"
+          "contentId": "03-13",
+          "purpose": "能够解释“把表达值转换成基因排序”所涉及的对象、关系与输出"
         },
         {
           "type": "figure",
@@ -1945,7 +2012,8 @@
             "sourceUrl": "https://www.nature.com/articles/s41592-024-02201-0"
           },
           "layout": "paper-side",
-          "caption": "图中上方为聚类与批次校正两个下游方向"
+          "caption": "图中上方为聚类与批次校正两个下游方向",
+          "purpose": "能够解释“批次整合同时关注技术与生物信号”所涉及的对象、关系与输出"
         },
         {
           "type": "figure",
@@ -1973,7 +2041,8 @@
             "sourceUrl": "https://www.nature.com/articles/s41592-025-02814-z"
           },
           "layout": "paper-side",
-          "caption": "MERFISH小鼠脑与CosMx人肝的空间数据示例"
+          "caption": "MERFISH小鼠脑与CosMx人肝的空间数据示例",
+          "purpose": "能够解释“空间转录组增加了什么”所涉及的对象、关系与输出"
         },
         {
           "type": "concept",
@@ -1991,7 +2060,8 @@
             "labels": []
           },
           "seconds": 50,
-          "contentId": "03-16"
+          "contentId": "03-16",
+          "purpose": "能够解释“把细胞放回组织中的位置”所涉及的对象、关系与输出"
         },
         {
           "type": "figure",
@@ -2018,7 +2088,8 @@
             "sourceUrl": "https://www.nature.com/articles/s41592-025-02814-z"
           },
           "layout": "paper-wide",
-          "caption": "上下文标记在前，排序后的基因token在后"
+          "caption": "上下文标记在前，排序后的基因token在后",
+          "purpose": "能够解释“Nicheformer 的学习与任务”所涉及的对象、关系与输出"
         },
         {
           "type": "concept",
@@ -2055,7 +2126,8 @@
             ]
           },
           "seconds": 50,
-          "contentId": "03-18"
+          "contentId": "03-18",
+          "purpose": "能够解释“Nicheformer怎样标识数据来源”所涉及的对象、关系与输出"
         },
         {
           "type": "case",
@@ -2063,7 +2135,7 @@
           "body": [
             "把邻居类型的计数转成比例，就得到邻域组成。"
           ],
-          "notes": "看邻域甲这一行，T类占六成，B类占四分之一，其余类型占剩余部分。邻域乙则以B类为主。这种向量是空间组成任务的一种输出形式。模型可以在有空间参考标签的数据上学习表达与组成之间的联系，再对新细胞产生组成估计。下一页先用计数亲手计算一次比例。",
+          "notes": "看邻域甲这一行，T类占六成，B类占四分之一，其余类型占剩余部分。邻域乙则以B类为主。这种向量是空间组成任务的一种输出形式。模型可以在有空间参考标签的数据上学习表达与组成之间的联系，再对新细胞产生组成估计。下一页沿着邻居计数，说明各类比例怎样得到。",
           "sourceIds": [
             "niche"
           ],
@@ -2090,7 +2162,8 @@
               ]
             ]
           },
-          "contentId": "03-19"
+          "contentId": "03-19",
+          "purpose": "能够解释“从表达推测邻域组成”所涉及的对象、关系与输出"
         },
         {
           "type": "concept",
@@ -2108,7 +2181,8 @@
           "diagram": {
             "kind": "spatial",
             "labels": []
-          }
+          },
+          "purpose": "能够解释“邻居计数怎样变成组成向量”所涉及的对象、关系与输出"
         },
         {
           "type": "concept",
@@ -2144,7 +2218,8 @@
           "seconds": 50,
           "contentId": "03-21",
           "layout": "visual",
-          "caption": "分别报告新供体、新组织或新平台中的表现"
+          "caption": "分别报告新供体、新组织或新平台中的表现",
+          "purpose": "能够解释“围绕新供体、新组织与新平台评估”所涉及的对象、关系与输出"
         },
         {
           "type": "figure",
@@ -2171,7 +2246,8 @@
             "sourceUrl": "https://www.nature.com/articles/s41592-025-02814-z"
           },
           "layout": "paper-wide",
-          "caption": "细胞密度对应邻居数量，邻域组成对应各类型的比例"
+          "caption": "细胞密度对应邻居数量，邻域组成对应各类型的比例",
+          "purpose": "能够解释“空间任务的输出层次”所涉及的对象、关系与输出"
         },
         {
           "type": "summary",
@@ -2188,7 +2264,8 @@
             "niche"
           ],
           "seconds": 50,
-          "contentId": "03-23"
+          "contentId": "03-23",
+          "purpose": "回收本课输入、方法与任务之间的联系"
         },
         {
           "type": "references",
@@ -2202,7 +2279,8 @@
             "cellbench"
           ],
           "seconds": 20,
-          "contentId": "03-24"
+          "contentId": "03-24",
+          "purpose": "提供继续阅读与证据追溯入口"
         }
       ],
       "durationSeconds": 1080,
@@ -2233,7 +2311,8 @@
             "luca"
           ],
           "seconds": 20,
-          "contentId": "04-01"
+          "contentId": "04-01",
+          "purpose": "明确本课主题与学习对象"
         },
         {
           "type": "concept",
@@ -2253,7 +2332,8 @@
           "seconds": 35,
           "contentId": "04-02",
           "layout": "visual",
-          "caption": "同一种输入仍可对应多个任务，最终选型还要检查具体版本和适配方式"
+          "caption": "同一种输入仍可对应多个任务，最终选型还要检查具体版本和适配方式",
+          "purpose": "能够解释“本课要形成一份选型说明”所涉及的对象、关系与输出"
         },
         {
           "type": "concept",
@@ -2292,7 +2372,8 @@
               ]
             ]
           },
-          "contentId": "04-03"
+          "contentId": "04-03",
+          "purpose": "能够解释“跨模态首先要说明跨什么”所涉及的对象、关系与输出"
         },
         {
           "type": "figure",
@@ -2311,7 +2392,8 @@
           "diagram": {
             "kind": "translation",
             "labels": []
-          }
+          },
+          "purpose": "能够解释“核酸与蛋白质怎样描述同一个产物”所涉及的对象、关系与输出"
         },
         {
           "type": "figure",
@@ -2338,7 +2420,8 @@
             "sourceUrl": "https://www.nature.com/articles/s42256-025-01044-4"
           },
           "layout": "paper-wide",
-          "caption": "核酸与蛋白质数据汇入统一的序列表示学习"
+          "caption": "核酸与蛋白质数据汇入统一的序列表示学习",
+          "purpose": "能够解释“LucaOne 的建模范围”所涉及的对象、关系与输出"
         },
         {
           "type": "figure",
@@ -2365,7 +2448,8 @@
             "sourceUrl": "https://www.nature.com/articles/s42256-025-01044-4"
           },
           "layout": "paper-wide",
-          "caption": "E表示字符嵌入，P表示位置，T表示分子类型"
+          "caption": "E表示字符嵌入，P表示位置，T表示分子类型",
+          "purpose": "能够解释“LucaOne的统一输入由什么组成”所涉及的对象、关系与输出"
         },
         {
           "type": "process",
@@ -2402,7 +2486,8 @@
               ]
             ]
           },
-          "contentId": "04-07"
+          "contentId": "04-07",
+          "purpose": "能够解释““联合”怎样得到检验”所涉及的对象、关系与输出"
         },
         {
           "type": "figure",
@@ -2429,7 +2514,8 @@
             "sourceUrl": "https://www.nature.com/articles/s42256-025-01044-4"
           },
           "layout": "paper-wide",
-          "caption": "输出向量可连接token级与片段级分类头"
+          "caption": "输出向量可连接token级与片段级分类头",
+          "purpose": "能够解释“LucaOne怎样组织多层次训练信号”所涉及的对象、关系与输出"
         },
         {
           "type": "figure",
@@ -2468,7 +2554,8 @@
               ]
             ]
           },
-          "contentId": "04-09"
+          "contentId": "04-09",
+          "purpose": "能够解释“按输入对象整理整张模型地图”所涉及的对象、关系与输出"
         },
         {
           "type": "concept",
@@ -2487,7 +2574,8 @@
             "kind": "task-outputs"
           },
           "layout": "visual",
-          "caption": "先明确要得到类别、数值还是坐标，再确定任务接口"
+          "caption": "先明确要得到类别、数值还是坐标，再确定任务接口",
+          "purpose": "能够解释“把研究问题转换成输入—输出接口”所涉及的对象、关系与输出"
         },
         {
           "type": "case",
@@ -2507,7 +2595,8 @@
           "seconds": 50,
           "contentId": "04-11",
           "layout": "visual",
-          "caption": "得分差用于比较候选，具体得分定义取决于模型和研究任务"
+          "caption": "得分差用于比较候选，具体得分定义取决于模型和研究任务",
+          "purpose": "能够解释“变异评分的模型选型”所涉及的对象、关系与输出"
         },
         {
           "type": "concept",
@@ -2531,7 +2620,8 @@
             ]
           },
           "seconds": 50,
-          "contentId": "04-12"
+          "contentId": "04-12",
+          "purpose": "能够解释“变异比较怎样构成一个评分接口”所涉及的对象、关系与输出"
         },
         {
           "type": "case",
@@ -2551,7 +2641,8 @@
           "seconds": 50,
           "contentId": "04-13",
           "layout": "visual",
-          "caption": "训练与推断分开组织，测试细胞来自独立样本"
+          "caption": "训练与推断分开组织，测试细胞来自独立样本",
+          "purpose": "能够解释“细胞注释的模型选型”所涉及的对象、关系与输出"
         },
         {
           "type": "concept",
@@ -2570,7 +2661,8 @@
             "kind": "trainable-blocks"
           },
           "layout": "visual",
-          "caption": "固定表示只训练任务头；微调同时更新部分或全部编码器"
+          "caption": "固定表示只训练任务头；微调同时更新部分或全部编码器",
+          "purpose": "能够解释“标签与资源怎样影响细胞任务适配”所涉及的对象、关系与输出"
         },
         {
           "type": "figure",
@@ -2598,7 +2690,8 @@
             "sourceUrl": "https://www.nature.com/articles/s41586-024-07487-w"
           },
           "layout": "paper-side",
-          "caption": "输入链与分子身份决定后续界面阅读的对象"
+          "caption": "输入链与分子身份决定后续界面阅读的对象",
+          "purpose": "能够解释“复合物结构的模型选型”所涉及的对象、关系与输出"
         },
         {
           "type": "figure",
@@ -2626,7 +2719,8 @@
             "sourceUrl": "https://www.nature.com/articles/s41586-024-07487-w"
           },
           "layout": "paper-side",
-          "caption": "在局部构象中定位接触残基与配体"
+          "caption": "在局部构象中定位接触残基与配体",
+          "purpose": "能够解释“从坐标到界面特征还要做什么”所涉及的对象、关系与输出"
         },
         {
           "type": "compare",
@@ -2665,7 +2759,8 @@
             ]
           },
           "seconds": 50,
-          "contentId": "04-17"
+          "contentId": "04-17",
+          "purpose": "能够解释“任务不同，比较项也不同”所涉及的对象、关系与输出"
         },
         {
           "type": "process",
@@ -2703,7 +2798,8 @@
               ]
             ]
           },
-          "contentId": "04-18"
+          "contentId": "04-18",
+          "purpose": "能够解释“零样本、探测与微调”所涉及的对象、关系与输出"
         },
         {
           "type": "concept",
@@ -2741,7 +2837,8 @@
             ]
           },
           "seconds": 50,
-          "contentId": "04-19"
+          "contentId": "04-19",
+          "purpose": "能够解释“选型还要记录运行成本与复用条件”所涉及的对象、关系与输出"
         },
         {
           "type": "case",
@@ -2779,7 +2876,8 @@
                 "输出、指标及运行环境"
               ]
             ]
-          }
+          },
+          "purpose": "能够解释“把模型接入可追溯工作流”所涉及的对象、关系与输出"
         },
         {
           "type": "concept",
@@ -2807,7 +2905,8 @@
             "alt": "LucaOne总览图中的数据、训练与任务",
             "credit": "LucaOne，Nat. Mach. Intell. 2025，Fig. 1",
             "sourceUrl": "https://www.nature.com/articles/s42256-025-01044-4"
-          }
+          },
+          "purpose": "能够解释“读一篇新论文时先找这三组信息”所涉及的对象、关系与输出"
         },
         {
           "type": "case",
@@ -2846,14 +2945,15 @@
                 "坐标与接触区域"
               ]
             ]
-          }
+          },
+          "purpose": "能够解释“三种研究需求的选型结果”所涉及的对象、关系与输出"
         },
         {
           "type": "summary",
           "title": "整门课程回顾",
           "body": [
-            "序列、蛋白质、细胞有不同输入",
-            "统一按数据、模型、适配和评价选型"
+            "对象：序列、蛋白质、细胞有不同输入",
+            "选型：统一按数据、模型、适配和评价选型"
           ],
           "notes": "整门课走过了四个尺度：核酸序列、蛋白质、细胞和跨对象表示。每到一个尺度，我们都重新识别输入、模型和输出。希望你带走的是一张能继续扩展的模型地图，以及把新材料组织成研究方案的方法。后续可以选择其中一个模型，进一步做数据处理、官方代码运行和结果分析专题。",
           "sourceIds": [
@@ -2864,7 +2964,8 @@
             "luca"
           ],
           "seconds": 50,
-          "contentId": "04-23"
+          "contentId": "04-23",
+          "purpose": "回收本课输入、方法与任务之间的联系"
         },
         {
           "type": "references",
@@ -2879,7 +2980,8 @@
             "onescience"
           ],
           "seconds": 20,
-          "contentId": "04-24"
+          "contentId": "04-24",
+          "purpose": "提供继续阅读与证据追溯入口"
         }
       ],
       "durationSeconds": 1080,
@@ -2894,12 +2996,10 @@
       }
     }
   ],
-  "sourceTemplate": "../../templates/16-灰色简约风科研报告PPT模板.pptx",
-  "templateProfile": "grey",
   "minimumSlidesPerLesson": 21,
   "exampleProvenance": "课堂算例的序列、矩阵与配对表用于解释输入编码和计算步骤；论文案例在相关页以作者来源标识。",
   "courseId": "biology-foundation-models",
-  "templateId": "wps-16",
   "includeExercises": false,
-  "visualFirst": true
+  "visualFirst": true,
+  "authoring": "authoring/course.mjs"
 }

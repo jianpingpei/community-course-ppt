@@ -1,42 +1,34 @@
 {
   "title": "生物大模型：序列、蛋白质、细胞与跨模态",
-  "themeId": "research-notes",
+  "engine": "pptxgenjs",
   "lessons": [
     {
       "id": "01",
       "title": "DNA/RNA 与生物序列建模",
       "pptx": "01-DNARNA 与生物序列建模.pptx",
       "slides": 24,
-      "seconds": 1140,
-      "templateId": "wps-16",
-      "themeId": "research-notes"
+      "seconds": 1140
     },
     {
       "id": "02",
       "title": "蛋白质表示、结构与设计",
       "pptx": "02-蛋白质表示、结构与设计.pptx",
       "slides": 24,
-      "seconds": 1140,
-      "templateId": "wps-16",
-      "themeId": "research-notes"
+      "seconds": 1140
     },
     {
       "id": "03",
       "title": "单细胞与空间模型",
       "pptx": "03-单细胞与空间模型.pptx",
       "slides": 24,
-      "seconds": 1140,
-      "templateId": "wps-16",
-      "themeId": "research-notes"
+      "seconds": 1140
     },
     {
       "id": "04",
       "title": "跨模态与模型选型",
       "pptx": "04-跨模态与模型选型.pptx",
       "slides": 24,
-      "seconds": 1140,
-      "templateId": "wps-16",
-      "themeId": "research-notes"
+      "seconds": 1140
     }
   ]
 }

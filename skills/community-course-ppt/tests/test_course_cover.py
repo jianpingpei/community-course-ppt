@@ -51,6 +51,13 @@ class CourseCoverTest(unittest.TestCase):
         with tempfile.TemporaryDirectory(prefix="course-cover-test-") as directory:
             root = Path(directory)
             source, output = root / "course.json", root / "output"
+            course.pop("themeId", None)
+            course["authoring"] = "pages.mjs"
+            (root / "DESIGN.md").write_text("# Test course design", "utf-8")
+            (root / "pages.mjs").write_text(
+                "export function renderLesson({ppt,course,lesson}) { for(const d of lesson.slides){const s=ppt.addSlide();s.addText(course.title,{x:.7,y:.7,w:10,h:.4,fontSize:18});s.addText(d.title,{x:.7,y:2,w:10,h:1,fontSize:36});} }",
+                "utf-8",
+            )
             source.write_text(json.dumps(course), "utf-8")
             subprocess.run(
                 ["node", str(script), "--course", str(source), "--out", str(output)],
@@ -70,3 +77,19 @@ class CourseCoverTest(unittest.TestCase):
                             "".join(t.text or "" for t in shape.findall(".//a:t", ns))
                         )
                 self.assertEqual(headers, ["One course"])
+
+
+class MigrationTest(unittest.TestCase):
+    def test_legacy_theme_fails_with_migration_message(self):
+        script = Path(__file__).resolve().parents[1] / "scripts/build.mjs"
+        with tempfile.TemporaryDirectory() as directory:
+            source = Path(directory) / "course.json"
+            source.write_text(json.dumps({"themeId": "research-notes"}), "utf-8")
+            result = subprocess.run(
+                ["node", str(script), "--course", str(source)],
+                capture_output=True,
+                text=True,
+                encoding="utf-8",
+            )
+            self.assertNotEqual(result.returncode, 0)
+            self.assertIn("请迁移旧配置字段 themeId", result.stderr)

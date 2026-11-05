@@ -1,6 +1,6 @@
 """Check exported native PowerPoint packages; this is not a visual review."""
 
-import argparse, json, re, sys, zipfile
+import argparse, json, re, sys, zipfile, posixpath
 from pathlib import Path
 import xml.etree.ElementTree as ET
 
@@ -27,7 +27,7 @@ def inspect(file, expected=None, preview=False, course=None):
         count = len(ids)
         if expected and count != len(expected["slides"]):
             errors.append("slide count mismatch")
-        minimum = (course or {}).get("minimumSlidesPerLesson")
+        minimum = (course or {}).get("minimumSlidesPerLesson", 21)
         if not preview and minimum and count < minimum:
             errors.append(f"{count} slides below required {minimum}")
         size = presentation.find("p:sldSz", NS)
@@ -52,7 +52,7 @@ def inspect(file, expected=None, preview=False, course=None):
             if (
                 course
                 and course.get("materialType") != "own-research"
-                and re.search(r"课程编制单位|课题号|哈尔滨工业大学|2024YFB", txt)
+                and re.search(r"课程编制单位|编制单位|课题号", txt)
             ):
                 errors.append(
                     f"page {i}: institutional branding on external-material course"
@@ -62,9 +62,18 @@ def inspect(file, expected=None, preview=False, course=None):
                 if expected and i <= len(expected["slides"])
                 else None
             )
+            normalize = lambda value: re.sub(r"\s+", "", value)
+            if slide and normalize(slide["title"]) not in normalize(txt):
+                errors.append(f"page {i}: lesson title missing or wrong order")
             if (
                 slide
-                and course.get("includeExercises") is False
+                and slide.get("type") == "cover"
+                and normalize(course["title"]) not in normalize(txt)
+            ):
+                errors.append(f"page {i}: cover missing shared course name")
+            if (
+                slide
+                and course.get("includeExercises") is not True
                 and (slide.get("type") == "exercise" or re.search("练习|判断题", txt))
             ):
                 errors.append(f"page {i}: exercise in lecture-only course")
@@ -80,6 +89,12 @@ def inspect(file, expected=None, preview=False, course=None):
                 if r.get("sz"):
                     minsize = min(minsize, int(r.get("sz")) / 100)
             for shape in root.findall(".//p:sp", NS):
+                content = "".join(t.text or "" for t in shape.findall(".//a:t", NS))
+                sizes = [
+                    int(r.get("sz")) / 100
+                    for r in shape.findall(".//a:rPr", NS)
+                    if r.get("sz")
+                ]
                 xf = shape.find("p:spPr/a:xfrm", NS)
                 if xf is not None:
                     off = xf.find("a:off", NS)
@@ -87,6 +102,31 @@ def inspect(file, expected=None, preview=False, course=None):
                     if off is not None and ext is not None:
                         x, y = int(off.get("x")), int(off.get("y"))
                         w, h = int(ext.get("cx")), int(ext.get("cy"))
+                        floor = (
+                            14
+                            if y >= int(size.get("cy")) * 0.88
+                            or (slide and slide.get("type") in {"cover", "references"})
+                            else 20
+                        )
+                        if sizes and min(sizes) < floor:
+                            errors.append(
+                                f"page {i}: text below {floor}pt outside source/footer area"
+                            )
+                        if (
+                            sizes
+                            and slide
+                            and normalize(content) == normalize(slide["title"])
+                            and min(sizes) < 32
+                        ):
+                            errors.append(f"page {i}: title below 32pt")
+                        if (
+                            sizes
+                            and slide
+                            and normalize(content)
+                            in [normalize(v) for v in slide.get("body", []) if v]
+                        ):
+                            if min(sizes) < 24:
+                                errors.append(f"page {i}: body text below 24pt")
                         if (
                             min(x, y) < -100
                             or x + w > int(size.get("cx")) + 100
@@ -97,11 +137,28 @@ def inspect(file, expected=None, preview=False, course=None):
                 Path(part).parent.as_posix() + "/_rels/" + Path(part).name + ".rels"
             )
             if note_rel in z.namelist():
-                notes_count += sum(
-                    1
-                    for r in ET.fromstring(z.read(note_rel))
-                    if r.get("Type", "").endswith("/notesSlide")
-                )
+                for relation in ET.fromstring(z.read(note_rel)):
+                    if not relation.get("Type", "").endswith("/notesSlide"):
+                        continue
+                    notes_count += 1
+                    target = relation.get("Target")
+                    note_part = (
+                        target.lstrip("/")
+                        if target.startswith("/")
+                        else posixpath.normpath(
+                            posixpath.join(posixpath.dirname(part), target)
+                        )
+                    )
+                    notes = "".join(
+                        v.text or ""
+                        for v in ET.fromstring(z.read(note_part)).findall(".//a:t", NS)
+                    )
+                    if slide and normalize(slide.get("notes", "")) not in normalize(
+                        notes
+                    ):
+                        errors.append(
+                            f"page {i}: speaker notes differ from course script"
+                        )
         if notes_count != count:
             errors.append(f"{notes_count}/{count} pages have notes")
         if expected:
