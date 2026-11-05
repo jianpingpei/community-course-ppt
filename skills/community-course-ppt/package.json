@@ -1,0 +1,16 @@
+{
+  "name": "community-course-ppt",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Portable native PowerPoint course authoring",
+  "scripts": {
+    "build": "node scripts/build.mjs"
+  },
+  "dependencies": {
+    "pptxgenjs": "4.0.1"
+  },
+  "overrides": {
+    "image-size": "2.0.4"
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "results": [
+    {
+      "file": "01-DNARNA 与生物序列建模.pptx",
+      "slides": 24,
+      "pdfPages": 24,
+      "notesPages": 24,
+      "nativeShapes": 385,
+      "nativeTables": 7,
+      "paperFigures": 8,
+      "smallestFontPt": 14.0,
+      "seconds": 1140,
+      "scriptChineseCharacters": 2411,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "file": "02-蛋白质表示、结构与设计.pptx",
+      "slides": 24,
+      "pdfPages": 24,
+      "notesPages": 24,
+      "nativeShapes": 291,
+      "nativeTables": 10,
+      "paperFigures": 8,
+      "smallestFontPt": 14.0,
+      "seconds": 1140,
+      "scriptChineseCharacters": 2420,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "file": "03-单细胞与空间模型.pptx",
+      "slides": 24,
+      "pdfPages": 24,
+      "notesPages": 24,
+      "nativeShapes": 336,
+      "nativeTables": 10,
+      "paperFigures": 7,
+      "smallestFontPt": 14.0,
+      "seconds": 1140,
+      "scriptChineseCharacters": 2451,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "file": "04-跨模态与模型选型.pptx",
+      "slides": 24,
+      "pdfPages": 24,
+      "notesPages": 24,
+      "nativeShapes": 360,
+      "nativeTables": 8,
+      "paperFigures": 6,
+      "smallestFontPt": 14.0,
+      "seconds": 1140,
+      "scriptChineseCharacters": 2428,
+      "errors": [],
+      "warnings": []
+    }
+  ],
+  "errors": 0,
+  "warnings": 0
+}

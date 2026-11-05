@@ -1,0 +1,82 @@
+[
+  {
+    "id": "nt1",
+    "file": "nt1.png",
+    "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41592-024-02523-z/MediaObjects/41592_2024_2523_Fig1_HTML.png",
+    "sourcePage": "https://www.nature.com/articles/s41592-024-02523-z",
+    "figure": "Fig. 1",
+    "accessed": "2026-11-05"
+  },
+  {
+    "id": "evo21",
+    "file": "evo21.png",
+    "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41586-026-10176-5/MediaObjects/41586_2026_10176_Fig1_HTML.png",
+    "sourcePage": "https://www.nature.com/articles/s41586-026-10176-5",
+    "figure": "Fig. 1",
+    "accessed": "2026-11-05"
+  },
+  {
+    "id": "rna1",
+    "file": "rna1.png",
+    "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41467-025-60872-5/MediaObjects/41467_2025_60872_Fig1_HTML.png",
+    "sourcePage": "https://www.nature.com/articles/s41467-025-60872-5",
+    "figure": "Fig. 1",
+    "accessed": "2026-11-05"
+  },
+  {
+    "id": "af31",
+    "file": "af31.png",
+    "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41586-024-07487-w/MediaObjects/41586_2024_7487_Fig1_HTML.png",
+    "sourcePage": "https://www.nature.com/articles/s41586-024-07487-w",
+    "figure": "Fig. 1",
+    "accessed": "2026-11-05"
+  },
+  {
+    "id": "scgpt1",
+    "file": "scgpt1.png",
+    "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41592-024-02201-0/MediaObjects/41592_2024_2201_Fig1_HTML.png",
+    "sourcePage": "https://www.nature.com/articles/s41592-024-02201-0",
+    "figure": "Fig. 1",
+    "accessed": "2026-11-05"
+  },
+  {
+    "id": "niche1",
+    "file": "niche1.png",
+    "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41592-025-02814-z/MediaObjects/41592_2025_2814_Fig1_HTML.png",
+    "sourcePage": "https://www.nature.com/articles/s41592-025-02814-z",
+    "figure": "Fig. 1",
+    "accessed": "2026-11-05"
+  },
+  {
+    "id": "luca1",
+    "file": "luca1.png",
+    "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs42256-025-01044-4/MediaObjects/42256_2025_1044_Fig1_HTML.png",
+    "sourcePage": "https://www.nature.com/articles/s42256-025-01044-4",
+    "figure": "Fig. 1",
+    "accessed": "2026-11-05"
+  },
+  {
+    "id": "esm3",
+    "file": "esm3.webp",
+    "url": "https://cdn.prod.website-files.com/6606dc3fd5f6645318003e20/674f9300d43c2d67f061b281_667a5a5fdb0a455c3ef22520_Figure%25201%2520(5).webp",
+    "sourcePage": "https://www.evolutionaryscale.ai/blog/esm3-release",
+    "figure": "esm3",
+    "accessed": "2026-11-05"
+  },
+  {
+    "id": "gfp",
+    "file": "gfp.webp",
+    "url": "https://cdn.prod.website-files.com/6606dc3fd5f6645318003e20/674f9300d43c2d67f061b275_667a5baa7410de72ca5af083_experiments.webp",
+    "sourcePage": "https://www.evolutionaryscale.ai/blog/esm3-release",
+    "figure": "gfp",
+    "accessed": "2026-11-05"
+  },
+  {
+    "id": "gfp_structure",
+    "file": "gfp_structure.webp",
+    "url": "https://cdn.prod.website-files.com/6606dc3fd5f6645318003e20/674f9301d43c2d67f061b290_667a5bb780d0ada7dc37d1c0_image%2520(1).webp",
+    "sourcePage": "https://www.evolutionaryscale.ai/blog/esm3-release",
+    "figure": "gfp_structure",
+    "accessed": "2026-11-05"
+  }
+]

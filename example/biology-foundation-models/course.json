@@ -1,0 +1,2905 @@
+{
+  "title": "生物大模型：序列、蛋白质、细胞与跨模态",
+  "community": "生物",
+  "audience": "有 AI 基础的跨专业学生",
+  "themeId": "research-notes",
+  "materialType": "survey",
+  "verifiedAsOf": "2026-11-05",
+  "sources": [
+    {
+      "id": "survey",
+      "title": "Wang et al. Large Language Models in Bioinformatics: A Survey. ACL Findings, 2025",
+      "url": "https://aclanthology.org/2025.findings-acl.184/",
+      "shortCitation": "Wang et al., ACL 2025"
+    },
+    {
+      "id": "omics",
+      "title": "Foundation models in omics research: a comprehensive survey. Briefings in Bioinformatics, 2026",
+      "url": "https://academic.oup.com/bib/article/27/4/bbag439/8766653",
+      "shortCitation": "组学基础模型综述, 2026"
+    },
+    {
+      "id": "nt",
+      "title": "Dalla-Torre et al. Nucleotide Transformer: building and evaluating robust foundation models for human genomics. Nature Methods, 2025",
+      "url": "https://www.nature.com/articles/s41592-024-02523-z",
+      "shortCitation": "Dalla-Torre et al., Nat. Methods 2025"
+    },
+    {
+      "id": "evo2",
+      "title": "Genome modelling and design across all domains of life with Evo 2. Nature, 2026",
+      "url": "https://www.nature.com/articles/s41586-026-10176-5",
+      "shortCitation": "Evo 2, Nature 2026"
+    },
+    {
+      "id": "rna",
+      "title": "Penić et al. RiNALMo: general-purpose RNA language models can generalize well on structure prediction tasks. Nature Communications, 2025",
+      "url": "https://www.nature.com/articles/s41467-025-60872-5",
+      "shortCitation": "RiNALMo, Nat. Commun. 2025"
+    },
+    {
+      "id": "esm3",
+      "title": "Hayes et al. Simulating 500 million years of evolution with a language model. Science, 2025",
+      "url": "https://www.science.org/doi/10.1126/science.ads0018",
+      "shortCitation": "Hayes et al., Science 2025"
+    },
+    {
+      "id": "esm3official",
+      "title": "EvolutionaryScale. ESM3 release and method overview",
+      "url": "https://www.evolutionaryscale.ai/blog/esm3-release",
+      "shortCitation": "EvolutionaryScale, ESM3"
+    },
+    {
+      "id": "af3",
+      "title": "Abramson et al. Accurate structure prediction of biomolecular interactions with AlphaFold 3. Nature, 2024",
+      "url": "https://www.nature.com/articles/s41586-024-07487-w",
+      "shortCitation": "Abramson et al., Nature 2024"
+    },
+    {
+      "id": "scgpt",
+      "title": "Cui et al. scGPT: toward building a foundation model for single-cell multi-omics using generative AI. Nature Methods, 2024",
+      "url": "https://www.nature.com/articles/s41592-024-02201-0",
+      "shortCitation": "Cui et al., Nat. Methods 2024"
+    },
+    {
+      "id": "geneformer",
+      "title": "Theodoris et al. Transfer learning enables predictions in network biology. Nature, 2023",
+      "url": "https://www.nature.com/articles/s41586-023-06139-9",
+      "shortCitation": "Theodoris et al., Nature 2023"
+    },
+    {
+      "id": "niche",
+      "title": "Tejada-Lapuerta et al. Nicheformer: a foundation model for single-cell and spatial omics. Nature Methods, 2025",
+      "url": "https://www.nature.com/articles/s41592-025-02814-z",
+      "shortCitation": "Nicheformer, Nat. Methods 2025"
+    },
+    {
+      "id": "luca",
+      "title": "Generalized biological foundation model with unified nucleic acid and protein language. Nature Machine Intelligence, 2025",
+      "url": "https://www.nature.com/articles/s42256-025-01044-4",
+      "shortCitation": "LucaOne, Nat. Mach. Intell. 2025"
+    },
+    {
+      "id": "dnabench",
+      "title": "Benchmarking DNA foundation models for genomic and genetic tasks. Nature Communications, 2025",
+      "url": "https://www.nature.com/articles/s41467-025-65823-8",
+      "shortCitation": "DNA模型评测, Nat. Commun. 2025"
+    },
+    {
+      "id": "cellbench",
+      "title": "Zero-shot evaluation reveals limitations of single-cell foundation models. Genome Biology, 2025",
+      "url": "https://doi.org/10.1186/s13059-025-03574-x",
+      "shortCitation": "单细胞模型评测, Genome Biol. 2025"
+    },
+    {
+      "id": "multimodal",
+      "title": "Towards multimodal foundation models in molecular cell biology. Nature, 2025",
+      "url": "https://doi.org/10.1038/s41586-025-08710-y",
+      "shortCitation": "多模态细胞模型展望, Nature 2025"
+    },
+    {
+      "id": "onescience",
+      "title": "光合开发者社区 OneScience：科学计算与领域模型入口",
+      "url": "https://developer.sourcefind.cn/onescience",
+      "shortCitation": "光合开发者社区 OneScience"
+    }
+  ],
+  "lessons": [
+    {
+      "id": "01",
+      "title": "DNA/RNA 与生物序列建模",
+      "slides": [
+        {
+          "type": "cover",
+          "title": "DNA/RNA 与生物序列建模",
+          "body": [
+            "DNA、RNA序列怎样进入大模型",
+            "Nucleotide Transformer、Evo 2 与 RiNALMo"
+          ],
+          "notes": "欢迎来到第一课。我们从两段只差一个碱基的DNA开始，逐步看清序列编码、预训练和任务输出。接着比较Nucleotide Transformer与Evo 2怎样学习序列，最后用一条RNA读懂配对表和二级结构。请带着一个问题听课：手里的数据经过模型以后，究竟变成了什么？",
+          "sourceIds": [
+            "survey"
+          ],
+          "seconds": 20,
+          "contentId": "01-01"
+        },
+        {
+          "type": "concept",
+          "title": "本课要回答的问题",
+          "body": [
+            "序列先转成上下文表示，再连接不同生物任务。"
+          ],
+          "notes": "这一课沿着输入、学习、输出三步展开。输入部分会把碱基和token分开，因为模型看到的单元取决于切分方式。学习部分用一次遮盖恢复和一次续写比较两种训练目标。输出部分回到具体的生物任务，大家会亲手读配对表，并计算一次配对预测的精确率和召回率。",
+          "sourceIds": [
+            "survey"
+          ],
+          "diagram": {
+            "kind": "learning-map",
+            "input": "sequence",
+            "outputs": [
+              "区域类别",
+              "位置关系"
+            ]
+          },
+          "seconds": 35,
+          "contentId": "01-02",
+          "layout": "visual",
+          "caption": "相同编码器可连接不同输出；任务头与标签共同决定具体用途"
+        },
+        {
+          "type": "figure",
+          "title": "DNA、RNA 与蛋白质",
+          "body": [
+            "DNA记录遗传信息，RNA参与表达与调控",
+            "蛋白质承担结构、催化等功能"
+          ],
+          "notes": "先建立三个对象之间的关系。DNA可以转录为RNA，编码RNA中的密码子又可以翻译成氨基酸。许多RNA本身还会折叠并参与调控。建模时，首先要选定观察对象：DNA模型处理碱基上下文，RNA模型还常面对碱基配对，蛋白质模型则关心残基、三维构象和功能。",
+          "sourceIds": [
+            "nt"
+          ],
+          "seconds": 50,
+          "contentId": "01-03",
+          "figure": {
+            "path": "assets/nt1.png",
+            "crop": [
+              0.4961411245865491,
+              0.6168446026097272,
+              0.503858875413451,
+              0.3831553973902728
+            ],
+            "alt": "DNA、RNA 与蛋白质",
+            "credit": "Dalla-Torre et al., Nat. Methods 2025，Fig. 1",
+            "sourceUrl": "https://www.nature.com/articles/s41592-024-02523-z"
+          },
+          "layout": "paper-side",
+          "caption": "DNA局部区域对应调控、剪接等不同任务"
+        },
+        {
+          "type": "figure",
+          "title": "序列窗口决定模型能看到什么",
+          "body": [
+            "窗口长度决定可见范围，长程上下文连接局部与远端区域。"
+          ],
+          "notes": "把模型的视野想成一个窗口。只看一个字母时，我们知道它是A，却无法读到附近的调控模式；扩大到一段序列后，才能观察组合关系。窗口继续加长，模型就有机会利用更远的信息。输入长度的单位需要读清：有的按碱基计，有的按token计，换模型时要做一次单位换算。",
+          "sourceIds": [
+            "evo2"
+          ],
+          "seconds": 50,
+          "contentId": "01-04",
+          "figure": {
+            "path": "assets/evo21.png",
+            "crop": [
+              0.4155124653739612,
+              0.0,
+              0.5844875346260388,
+              0.15660592255125286
+            ],
+            "alt": "序列窗口决定模型能看到什么",
+            "credit": "Evo 2, Nature 2026，Fig. 1",
+            "sourceUrl": "https://www.nature.com/articles/s41586-026-10176-5"
+          },
+          "layout": "paper-wide",
+          "caption": "从局部RNA、基因到染色体，所需上下文尺度逐渐增大"
+        },
+        {
+          "type": "case",
+          "title": "一次T→G替换怎样进入模型",
+          "body": [
+            "第4位由T替换成G",
+            "比较两条序列的表示或任务得分"
+          ],
+          "notes": "看右侧两行序列，先找到第四位的T到G替换。最直接的计算是分别编码两条序列，再比较两个向量；另一种方法是比较模型给出的序列概率。若研究调控区域，就可以把表示接到表达或活性预测头。这个小例子把位置变化、模型计算和研究任务连接了起来。",
+          "sourceIds": [
+            "nt",
+            "dnabench"
+          ],
+          "diagram": {
+            "kind": "sequence",
+            "labels": [
+              "ACGTAC",
+              "第 4 位 T→G",
+              "ACGGAC"
+            ]
+          },
+          "seconds": 50,
+          "contentId": "01-05"
+        },
+        {
+          "type": "process",
+          "title": "序列如何变成 token",
+          "body": [
+            "同一条序列可按单碱基、固定片段或子词切分。"
+          ],
+          "notes": "请从第一行读起。单碱基编码把六个字符变成六个token；以不重叠的三联体切分时，会得到ACG和TAC两个单元；六联体则把整段作为一个单元。token数量变少后，同样的token窗口可以覆盖更长的DNA，但每个单元的粒度也会改变。阅读模型时要同时看切分规则与上下文长度。",
+          "sourceIds": [
+            "nt",
+            "rna"
+          ],
+          "seconds": 50,
+          "table": {
+            "headers": [
+              "切分方式",
+              "ACGTAC 的表示",
+              "单元数"
+            ],
+            "rows": [
+              [
+                "单碱基",
+                "A C G T A C",
+                "6"
+              ],
+              [
+                "连续 3-mer",
+                "ACG / TAC",
+                "2"
+              ],
+              [
+                "连续 6-mer",
+                "ACGTAC",
+                "1"
+              ]
+            ]
+          },
+          "contentId": "01-06"
+        },
+        {
+          "type": "concept",
+          "title": "token怎样变成上下文向量",
+          "body": [
+            "同一token在不同上下文中，可以形成不同向量。"
+          ],
+          "notes": "token编号本身只是离散索引，模型首先通过嵌入表把它转成向量。随后，编码器根据可见上下文更新每个位置。相同的ACG出现在不同片段中，更新后的向量可能不同。模型输出可以保留整排位置向量，也可以进一步聚合成一个向量，分别服务于位置级和序列级任务。",
+          "sourceIds": [
+            "nt"
+          ],
+          "diagram": {
+            "kind": "embedding"
+          },
+          "seconds": 50,
+          "contentId": "01-07",
+          "layout": "visual",
+          "caption": "保留位置维度可做位点预测，汇聚后可描述整段序列"
+        },
+        {
+          "type": "process",
+          "title": "掩码预训练学到什么",
+          "body": [
+            "模型根据可见上下文，恢复被遮盖位置。"
+          ],
+          "notes": "原始序列是ACGTAC，现在把第三位G遮住。训练过程中，模型只能根据可见的A、C、T、A、C来预测这一位。训练标签直接来自原序列，因此大量未人工标注的DNA也能提供学习信号。反复完成恢复任务，会推动表示捕捉局部模式和跨位置关系。下一页把这一步写成训练目标。",
+          "sourceIds": [
+            "nt",
+            "rna"
+          ],
+          "diagram": {
+            "kind": "masked-sequence",
+            "labels": []
+          },
+          "seconds": 50,
+          "caption": "训练标签来自原序列；优化目标是提高被遮盖碱基的预测概率。",
+          "layout": "visual",
+          "contentId": "01-08"
+        },
+        {
+          "type": "figure",
+          "title": "一次掩码训练怎样产生学习信号",
+          "body": [
+            "原序列提供被遮盖位置的目标",
+            "大量遮盖组合形成自监督训练样本"
+          ],
+          "notes": "看原图左侧的输入、切分和遮盖步骤。DNA首先转成token，部分token再被替换成MASK。图中的编码器读取可见上下文，语言模型头根据位置表示恢复目标token。原始序列提供监督目标，因此大量序列可以形成自监督训练数据。图中显示的是token级流程，具体token覆盖几个碱基由分词方式决定。",
+          "sourceIds": [
+            "nt"
+          ],
+          "seconds": 50,
+          "contentId": "01-09",
+          "figure": {
+            "path": "assets/nt1.png",
+            "crop": [
+              0.0,
+              0.0,
+              0.4410143329658214,
+              0.29655990510083036
+            ],
+            "alt": "一次掩码训练怎样产生学习信号",
+            "credit": "Dalla-Torre et al., Nat. Methods 2025，Fig. 1",
+            "sourceUrl": "https://www.nature.com/articles/s41592-024-02523-z"
+          },
+          "layout": "paper-side",
+          "caption": "切分、遮盖与上下文编码"
+        },
+        {
+          "type": "figure",
+          "title": "Nucleotide Transformer",
+          "body": [
+            "NT把DNA上下文编码为位置级向量。"
+          ],
+          "notes": "Nucleotide Transformer把基因组片段作为预训练材料，核心做法与刚才的掩码恢复一致。训练结束后，同一个碱基片段会因为周围序列不同而得到不同的表示。原论文把这些表示用于多种基因组预测任务。我们可以把它理解为先学一套通用的序列特征，再针对目标任务训练读出方式。",
+          "sourceIds": [
+            "nt"
+          ],
+          "seconds": 50,
+          "contentId": "01-10",
+          "figure": {
+            "path": "assets/nt1.png",
+            "crop": [
+              0.3031973539140022,
+              0.0,
+              0.6968026460859978,
+              0.29062870699881377
+            ],
+            "alt": "Nucleotide Transformer",
+            "credit": "Dalla-Torre et al., Nat. Methods 2025，Fig. 1",
+            "sourceUrl": "https://www.nature.com/articles/s41592-024-02523-z"
+          },
+          "layout": "paper-wide",
+          "caption": "位置级表示接入语言模型头，恢复被遮盖token"
+        },
+        {
+          "type": "concept",
+          "title": "NT的表示可以接到哪些任务",
+          "body": [
+            "同一个编码器，可以连接不同的任务输出。"
+          ],
+          "notes": "原论文把NT用于多种基因组任务。这一页选三个容易理解的输出：启动子识别回答区域类别，调控预测回答某类活性或状态，剪接位点任务回答特定位置的标签。它们共用序列表示，但监督信号的组织方式不同。请特别看最后一列，任务头需要输出整段标签还是逐位置标签。",
+          "sourceIds": [
+            "nt"
+          ],
+          "table": {
+            "headers": [
+              "任务",
+              "输入焦点",
+              "输出组织"
+            ],
+            "rows": [
+              [
+                "启动子识别",
+                "候选DNA区域",
+                "序列级分类"
+              ],
+              [
+                "调控区域预测",
+                "区域及其上下文",
+                "分类或活性回归"
+              ],
+              [
+                "剪接位点识别",
+                "候选位置附近序列",
+                "位置级标签"
+              ]
+            ]
+          },
+          "seconds": 50,
+          "contentId": "01-11"
+        },
+        {
+          "type": "figure",
+          "title": "从表示到一个任务",
+          "body": [
+            "冻结编码器后训练预测头，或对编码器进行微调。"
+          ],
+          "notes": "现在把编码器接到一个任务上。若标签是启动子或非启动子，就训练分类头；若标签是调控活性，就训练回归头。冻结编码器能快速检验已有表示是否好用，微调则让表示进一步适应任务。请注意图中的任务头：它把通用表示转成我们真正需要的生物学输出。",
+          "sourceIds": [
+            "nt"
+          ],
+          "seconds": 50,
+          "contentId": "01-12",
+          "figure": {
+            "path": "assets/nt1.png",
+            "crop": [
+              0.2177508269018743,
+              0.3202846975088968,
+              0.6008820286659317,
+              0.2846975088967972
+            ],
+            "alt": "从表示到一个任务",
+            "credit": "Dalla-Torre et al., Nat. Methods 2025，Fig. 1",
+            "sourceUrl": "https://www.nature.com/articles/s41592-024-02523-z"
+          },
+          "layout": "paper-wide",
+          "caption": "冻结的预训练模块与可训练预测头分工"
+        },
+        {
+          "type": "figure",
+          "title": "Evo 2 的建模方向",
+          "body": [
+            "Evo 2以基因组序列建模连接变异预测与序列设计。"
+          ],
+          "notes": "与遮盖后同时观察两侧上下文不同，生成式序列建模沿着序列逐步预测下一个位置。Evo 2展示了这条路线在基因组上的扩展。给定一段前缀，模型输出下一个碱基的分布；采样一个碱基并拼回输入，就能继续生成。已有序列也可以沿同样的步骤计算概率或任务相关评分。",
+          "sourceIds": [
+            "evo2"
+          ],
+          "seconds": 50,
+          "contentId": "01-13",
+          "figure": {
+            "path": "assets/evo21.png",
+            "crop": [
+              0,
+              0,
+              0.4132040627885503,
+              0.17084282460136674
+            ],
+            "alt": "Evo 2 的建模方向",
+            "credit": "Evo 2, Nature 2026，Fig. 1",
+            "sourceUrl": "https://www.nature.com/articles/s41586-026-10176-5"
+          },
+          "layout": "paper-wide",
+          "caption": "图中列出基因与蛋白质层面的部分应用方向"
+        },
+        {
+          "type": "concept",
+          "title": "序列概率把局部预测连接起来",
+          "body": [
+            "序列ACG的概率，按每一位已有的前缀分解。"
+          ],
+          "notes": "这个乘积把整条序列的概率拆成一串条件概率。生成时，模型在每一步预测下一位，并把选中的碱基交给下一步。评分时则沿着已经给定的序列读取概率，通常累积对数概率以方便计算。两种用法共享同一分解方式，只是生成要选择新字符，评分要评价已有字符。",
+          "sourceIds": [
+            "evo2"
+          ],
+          "seconds": 50,
+          "contentId": "01-14",
+          "diagram": {
+            "kind": "probability-product"
+          },
+          "layout": "visual",
+          "caption": "生成时逐位采样，评分时沿给定序列累计对数概率"
+        },
+        {
+          "type": "compare",
+          "title": "两类预训练任务",
+          "body": [
+            "遮盖恢复与顺序生成，采用不同的训练目标。"
+          ],
+          "notes": "比较两种模型时，先对齐正在做的任务。Nucleotide Transformer这一页突出掩码恢复和表示迁移，Evo 2这一页突出生成式序列建模。若需要一个分类器，就看表示怎样接到分类头；若需要序列续写，就看生成接口、上下文范围和采样方式。模型名字只是入口，训练目标决定了后续怎么使用它。",
+          "sourceIds": [
+            "nt",
+            "evo2"
+          ],
+          "table": {
+            "headers": [
+              "比较维度",
+              "Nucleotide Transformer",
+              "Evo 2"
+            ],
+            "rows": [
+              [
+                "预训练目标",
+                "掩码恢复",
+                "生成式序列建模"
+              ],
+              [
+                "常见输出",
+                "上下文表示",
+                "序列评分或生成"
+              ],
+              [
+                "选择依据",
+                "下游任务与版本",
+                "任务、上下文与资源"
+              ]
+            ]
+          },
+          "seconds": 50,
+          "contentId": "01-15"
+        },
+        {
+          "type": "figure",
+          "title": "RNA任务把序列连接到配对关系",
+          "body": [
+            "RNA有A、U、G、C四种碱基",
+            "RiNALMo从RNA上下文学习表示"
+          ],
+          "notes": "RNA让我们看到另一种输出：除了给整条序列一个标签，还可以回答哪两个位置互相配对。两个配对位置在一维序列上可能相隔很远，因此上下文表示需要捕捉远距离关联。RiNALMo学习的是RNA表示，二级结构任务再把表示转成位置之间的配对关系。接着我们用九个核苷酸案例读这种关系。",
+          "sourceIds": [
+            "rna"
+          ],
+          "seconds": 50,
+          "contentId": "01-16",
+          "figure": {
+            "path": "assets/rna1.png",
+            "crop": [
+              0.0,
+              0.0,
+              0.497997997997998,
+              0.43803418803418803
+            ],
+            "alt": "RNA任务把序列连接到配对关系",
+            "credit": "RiNALMo, Nat. Commun. 2025，Fig. 1",
+            "sourceUrl": "https://www.nature.com/articles/s41467-025-60872-5"
+          },
+          "layout": "paper-side",
+          "caption": "RNA数据经过遮盖后进入上下文编码器"
+        },
+        {
+          "type": "figure",
+          "title": "读懂一条RNA的茎与环",
+          "body": [
+            "序列编号、互补配对与茎环结构"
+          ],
+          "notes": "先从左到右给这条RNA编号：A是一号，G是二号，最后一个U是九号。把一号A与九号U连起来，再连接二号G和八号C、三号C和七号G，就得到三层配对。中间四到六号的三个A形成未配对的环区。图中的骨架线按一到九连接，横向连接则表示碱基配对。",
+          "sourceIds": [
+            "rna"
+          ],
+          "seconds": 50,
+          "diagram": {
+            "kind": "rna-pairing",
+            "sequence": "AGCAAAGCU",
+            "pairs": [
+              [
+                1,
+                9
+              ],
+              [
+                2,
+                8
+              ],
+              [
+                3,
+                7
+              ]
+            ]
+          },
+          "layout": "rna",
+          "contentId": "01-17"
+        },
+        {
+          "type": "concept",
+          "title": "配对表与括号串怎样对应",
+          "body": [
+            "配对表记录位置关系，括号串沿序列逐位编码。"
+          ],
+          "notes": "继续使用刚才这条RNA。一到九、二到八、三到七构成三对，所以前三位写左括号，后三位写右括号。四到六没有配对，分别写一个点，得到三个左括号、三个点、三个右括号。配对表适合检查具体位置，括号串适合与原序列逐位对齐。",
+          "sourceIds": [
+            "rna"
+          ],
+          "table": {
+            "headers": [
+              "序列位置",
+              "1 2 3",
+              "4 5 6",
+              "7 8 9"
+            ],
+            "rows": [
+              [
+                "碱基",
+                "A G C",
+                "A A A",
+                "G C U"
+              ],
+              [
+                "配对位置",
+                "9 8 7",
+                "— — —",
+                "3 2 1"
+              ],
+              [
+                "括号串",
+                "( ( (",
+                ". . .",
+                ") ) )"
+              ]
+            ]
+          },
+          "seconds": 50,
+          "contentId": "01-18"
+        },
+        {
+          "type": "concept",
+          "title": "把位置配对写成二维矩阵",
+          "body": [
+            "行、列都使用序列位置，相交单元格记录配对。"
+          ],
+          "notes": "如果输出头要为每对位置打分，就可以把配对关系排成矩阵。这里只取一到三号作为行、七到九号作为列。第一行对应一到九，第二行对应二到八，第三行对应三到七。因此三个一落在反向对角线上。模型也可以在这些格子里输出连续概率，再通过结构解码得到最终位置对。",
+          "sourceIds": [
+            "rna"
+          ],
+          "table": {
+            "headers": [
+              "位置",
+              "7：G",
+              "8：C",
+              "9：U"
+            ],
+            "rows": [
+              [
+                "1：A",
+                "0",
+                "0",
+                "1"
+              ],
+              [
+                "2：G",
+                "0",
+                "1",
+                "0"
+              ],
+              [
+                "3：C",
+                "1",
+                "0",
+                "0"
+              ]
+            ]
+          },
+          "seconds": 50,
+          "contentId": "01-19"
+        },
+        {
+          "type": "case",
+          "title": "让测试集对应新的序列家族",
+          "body": [
+            "按序列家族划分训练与测试，检验对新家族的泛化。"
+          ],
+          "notes": "生物序列存在大量相似成员。设计测试集时，可以按序列相似性或家族来分组，让测试对应新家族或新序列的目标。接着在同一划分上比较不同方法。这样读到的差异才会对应明确的应用场景。RNA结构尤其适合按家族看结果，因为同一家族往往共享结构模式。",
+          "sourceIds": [
+            "dnabench",
+            "rna"
+          ],
+          "diagram": {
+            "kind": "holdout",
+            "rows": [
+              [
+                "序列家族",
+                "家族A、B",
+                "家族C"
+              ]
+            ]
+          },
+          "seconds": 50,
+          "contentId": "01-20",
+          "layout": "visual",
+          "caption": "相近序列所在的家族整体划分，减少训练与测试之间的近邻泄漏"
+        },
+        {
+          "type": "concept",
+          "title": "配对预测的精确率与召回率",
+          "body": [
+            "对照预测集合与参考集合，分别计算精确率和召回率。"
+          ],
+          "notes": "正确配对2组，预测配对3组，参考配对3组。精确率关心预测中有多少正确，召回率关心参考中找回多少。这一例两者都是三分之二。F1把精确率和召回率合并，便于用一个量概括配对恢复情况。读结构评价时，要同时看预测集合与参考集合。",
+          "sourceIds": [
+            "rna"
+          ],
+          "seconds": 50,
+          "contentId": "01-21",
+          "table": {
+            "headers": [
+              "统计对象",
+              "计数",
+              "评价结果"
+            ],
+            "rows": [
+              [
+                "正确配对",
+                "2组",
+                "精确率＝2/3"
+              ],
+              [
+                "预测配对",
+                "3组",
+                "召回率＝2/3"
+              ],
+              [
+                "参考配对",
+                "3组",
+                "F1＝2/3"
+              ]
+            ]
+          }
+        },
+        {
+          "type": "figure",
+          "title": "RiNALMo的下游任务",
+          "body": [
+            "RiNALMo的表示可连接结构、分类和表达相关任务。"
+          ],
+          "notes": "沿图中下方的分支阅读。二级结构任务使用位置级表示，预测位置对关系。RNA分类汇聚整条序列的表示，输出类别。另一些任务输出与表达或翻译相关的数值。共享的是RNA编码器，变化的是任务头和标签。",
+          "sourceIds": [
+            "rna"
+          ],
+          "seconds": 65,
+          "contentId": "01-22",
+          "figure": {
+            "path": "assets/rna1.png",
+            "crop": [
+              0.0,
+              0.4594017094017094,
+              0.5005005005005005,
+              0.5128205128205128
+            ],
+            "alt": "RiNALMo的下游任务",
+            "credit": "RiNALMo, Nat. Commun. 2025，Fig. 1",
+            "sourceUrl": "https://www.nature.com/articles/s41467-025-60872-5"
+          },
+          "layout": "paper-wide",
+          "caption": "位置级表示与序列级表示分别连接不同任务头"
+        },
+        {
+          "type": "summary",
+          "title": "本课小结",
+          "body": [
+            "输入：分子类型、窗口与token",
+            "模型：NT、Evo 2、RiNALMo",
+            "输出：类别、数值或位置关系"
+          ],
+          "notes": "回顾开头的T到G替换，现在我们能够分别描述输入怎样变、模型计算什么，以及研究任务读取什么输出。DNA与RNA共享序列学习的思路，也各自有重要的任务特点。接下来进入蛋白质世界，看看序列表示怎样与三维结构、功能注释和生成设计结合。",
+          "sourceIds": [
+            "survey",
+            "nt",
+            "evo2",
+            "rna"
+          ],
+          "seconds": 50,
+          "contentId": "01-23"
+        },
+        {
+          "type": "references",
+          "title": "延伸阅读",
+          "body": [],
+          "notes": "本课的三篇重点阅读分别对应NT、Evo 2和RiNALMo。建议先阅读每篇论文的模型总图，找出输入、训练目标和输出，再看一个与自己研究问题接近的实验。综述用于建立整体分类，原始论文用于理解具体模型。",
+          "sourceIds": [
+            "survey",
+            "nt",
+            "evo2",
+            "rna",
+            "dnabench"
+          ],
+          "seconds": 20,
+          "contentId": "01-24"
+        }
+      ],
+      "durationSeconds": 1080,
+      "estimatedTiming": {
+        "status": "estimated_not_rehearsed",
+        "speechRateChineseCharsPerMinute": [
+          170,
+          210
+        ],
+        "plannedPauseSeconds": 120,
+        "targetMinutes": 18
+      }
+    },
+    {
+      "id": "02",
+      "title": "蛋白质表示、结构与设计",
+      "slides": [
+        {
+          "type": "cover",
+          "title": "蛋白质表示、结构与设计",
+          "body": [
+            "蛋白质序列、空间结构与功能",
+            "ESM3与AlphaFold 3"
+          ],
+          "notes": "上一课我们处理的是DNA和RNA，这一课把输入换成氨基酸序列。先看一个蛋白可以怎样被描述，再分别解释ESM3如何提出候选、AlphaFold 3如何预测分子复合物结构。最后把两个模型放回一个完整研究问题，比较需要提供的信息和能够读取的结果。",
+          "sourceIds": [
+            "survey",
+            "esm3",
+            "af3"
+          ],
+          "seconds": 20,
+          "contentId": "02-01"
+        },
+        {
+          "type": "concept",
+          "title": "本课要回答的问题",
+          "body": [
+            "已知条件与目标输出，决定采用哪条蛋白质建模路线。"
+          ],
+          "notes": "本课的主线是三个动词：描述、生成和预测。描述部分建立氨基酸、残基和结构的基本词汇。生成部分用固定条件、补全未知位置的方式理解ESM3。结构部分则关心多种分子怎样在空间中组合。听完以后，应当能够把一个蛋白研究需求写成明确的输入和输出。",
+          "sourceIds": [
+            "survey"
+          ],
+          "diagram": {
+            "kind": "routes",
+            "rows": [
+              [
+                "局部结构等条件",
+                "ESM3",
+                "候选蛋白序列"
+              ],
+              [
+                "给定分子组分",
+                "AlphaFold 3",
+                "复合物结构"
+              ]
+            ]
+          },
+          "seconds": 35,
+          "contentId": "02-02",
+          "layout": "visual",
+          "caption": "ESM3侧重条件生成，AF3预测给定组分的联合结构"
+        },
+        {
+          "type": "concept",
+          "title": "蛋白质的三个观察角度",
+          "body": [
+            "序列、结构与功能共同描述一个蛋白。"
+          ],
+          "notes": "序列告诉我们残基如何排列，结构告诉我们这些残基在空间里怎样接近，功能则来自蛋白在特定条件下的作用或测量。两条序列可能形成相似结构，同一个蛋白的功能也依赖环境和结合对象。接下来先把这些描述拆开，再看模型怎样把它们联系起来。",
+          "sourceIds": [
+            "esm3official",
+            "af3"
+          ],
+          "seconds": 50,
+          "table": {
+            "headers": [
+              "观察角度",
+              "数据长什么样",
+              "示例问题"
+            ],
+            "rows": [
+              [
+                "序列",
+                "氨基酸排列",
+                "这个位点能否改变？"
+              ],
+              [
+                "结构",
+                "三维坐标或距离",
+                "两个残基是否接近？"
+              ],
+              [
+                "功能",
+                "特定条件下的测量",
+                "是否具有目标活性？"
+              ]
+            ]
+          },
+          "contentId": "02-03"
+        },
+        {
+          "type": "concept",
+          "title": "M、K、T分别代表哪种氨基酸",
+          "body": [
+            "单字母代码对应氨基酸，编号对应残基位置。"
+          ],
+          "notes": "M、K、T是三种氨基酸的单字母代码，分别对应甲硫氨酸、赖氨酸和苏氨酸。序列中的第一个位置叫第一个残基，并不直接等于空间中的某个方向。读蛋白模型时，先把字母、残基编号和结构坐标分清，后面的掩码位置与局部结构条件就容易理解了。",
+          "sourceIds": [
+            "survey"
+          ],
+          "table": {
+            "headers": [
+              "单字母",
+              "中文名称",
+              "在序列中的含义"
+            ],
+            "rows": [
+              [
+                "M",
+                "甲硫氨酸",
+                "第1个残基的身份"
+              ],
+              [
+                "K",
+                "赖氨酸",
+                "第2个残基的身份"
+              ],
+              [
+                "T",
+                "苏氨酸",
+                "第3个残基的身份"
+              ]
+            ]
+          },
+          "seconds": 50,
+          "contentId": "02-04"
+        },
+        {
+          "type": "case",
+          "title": "先写清楚研究问题",
+          "body": [
+            "先确定已知信息与需要得到的结果。"
+          ],
+          "notes": "设想三个明确需求。一种情况是已有一条蛋白序列，想获得其空间结构；另一种情况是希望保留一个局部构象，同时改变周围序列；还有一种情况关心蛋白与另一分子如何结合。三个需求决定了不同的输入条件和输出。后面的ESM3与AF3会分别承担这些问题中的不同角色。",
+          "sourceIds": [
+            "esm3official",
+            "af3"
+          ],
+          "seconds": 50,
+          "contentId": "02-05",
+          "table": {
+            "headers": [
+              "研究需求",
+              "已知输入",
+              "目标输出"
+            ],
+            "rows": [
+              [
+                "结构预测",
+                "氨基酸序列",
+                "空间构象"
+              ],
+              [
+                "条件设计",
+                "局部结构或性质",
+                "满足条件的新序列"
+              ],
+              [
+                "复合物建模",
+                "多种分子组分",
+                "联合空间结构"
+              ]
+            ]
+          }
+        },
+        {
+          "type": "process",
+          "title": "蛋白质表示学习",
+          "body": [
+            "每个残基得到一个融合上下文的向量。"
+          ],
+          "notes": "沿着M、K、T三个位置观察表示。初始嵌入反映氨基酸身份，经过上下文编码后，每个向量还包含与其他位置的关系。位置级向量适合用于位点或局部性质预测，汇总向量适合描述整个蛋白。理解这层接口，就能把表示模型与具体任务头连接起来。",
+          "sourceIds": [
+            "survey",
+            "esm3official"
+          ],
+          "seconds": 50,
+          "table": {
+            "headers": [
+              "残基位置",
+              "1",
+              "2",
+              "3"
+            ],
+            "rows": [
+              [
+                "氨基酸",
+                "M",
+                "K",
+                "T"
+              ],
+              [
+                "表示对象",
+                "位置1向量",
+                "位置2向量",
+                "位置3向量"
+              ],
+              [
+                "信息来源",
+                "本位点＋上下文",
+                "本位点＋上下文",
+                "本位点＋上下文"
+              ]
+            ]
+          },
+          "contentId": "02-06"
+        },
+        {
+          "type": "figure",
+          "title": "一维序列与三维接触怎样联系",
+          "body": [
+            "序列上相隔较远的残基",
+            "折叠后在空间中靠近"
+          ],
+          "notes": "沿着蛋白链看，一号和五十号残基相隔很远；折叠以后，它们可能靠在一起。模型因此既要处理一维上下文，也要描述位置之间的空间关系。接触图的读法和上一课RNA配对矩阵相似：行列都是残基编号，某个格子表示两个残基之间的接近程度。",
+          "sourceIds": [
+            "af3"
+          ],
+          "seconds": 50,
+          "contentId": "02-07",
+          "figure": {
+            "path": "assets/af31.png",
+            "crop": [
+              0.05907372400756144,
+              0.0,
+              0.3827977315689981,
+              0.30811470408785846
+            ],
+            "alt": "一维序列与三维接触怎样联系",
+            "credit": "Abramson et al., Nature 2024，Fig. 1",
+            "sourceUrl": "https://www.nature.com/articles/s41586-024-07487-w"
+          },
+          "layout": "paper-side",
+          "caption": "蛋白质与核酸的空间排列来自AF3论文案例"
+        },
+        {
+          "type": "figure",
+          "title": "ESM3 的多模态范围",
+          "body": [
+            "ESM3联合建模序列、结构与功能三条信息轨道。"
+          ],
+          "notes": "ESM3把蛋白的多种描述组织成可以共同处理的信息轨道。序列轨道是氨基酸，结构和功能也会被转成适合模型学习的离散表示。训练时遮盖其中一部分，让模型根据可见信息恢复内容。使用时，就可以选择保留一段序列、局部结构或某类功能条件，再生成其余部分。",
+          "sourceIds": [
+            "esm3official"
+          ],
+          "seconds": 50,
+          "contentId": "02-08",
+          "figure": {
+            "path": "assets/esm3.webp",
+            "crop": [
+              0.16736401673640167,
+              0.0,
+              0.7217573221757322,
+              0.18850987432675045
+            ],
+            "alt": "ESM3 的多模态范围",
+            "credit": "EvolutionaryScale, ESM3，esm3",
+            "sourceUrl": "https://www.evolutionaryscale.ai/blog/esm3-release"
+          },
+          "layout": "paper-wide",
+          "caption": "序列记录残基，结构编码几何，功能轨道补充注释"
+        },
+        {
+          "type": "concept",
+          "title": "三条信息轨道怎样进入ESM3",
+          "body": [
+            "同一残基位置，可以连接多种互补信息。"
+          ],
+          "notes": "把一条蛋白看成三排对齐的信息。第一排是氨基酸，第二排编码结构特征，第三排携带功能相关线索。ESM3把可用信息转成模型能够共同处理的token。训练时可以遮盖不同轨道的内容，让模型利用其余线索恢复。由此就能把多模态理解与条件补全连接起来。",
+          "sourceIds": [
+            "esm3",
+            "esm3official"
+          ],
+          "table": {
+            "headers": [
+              "信息轨道",
+              "描述什么",
+              "可以给定的条件"
+            ],
+            "rows": [
+              [
+                "序列",
+                "氨基酸及其排列",
+                "保留某些残基位置"
+              ],
+              [
+                "结构",
+                "局部空间几何",
+                "保留一段局部构象"
+              ],
+              [
+                "功能",
+                "蛋白作用相关的注释",
+                "给出功能类别线索"
+              ]
+            ]
+          },
+          "seconds": 50,
+          "contentId": "02-09"
+        },
+        {
+          "type": "process",
+          "title": "从条件到候选蛋白",
+          "body": [
+            "保留指定条件，逐步补全未知位置。"
+          ],
+          "notes": "先看这一排位置，M、A、K和L代表已经指定的残基，问号是待补全的位置。条件生成的关键在于保留已经给定的信息，同时利用上下文推断其他位置。实际研究可以给出更长序列、局部结构或功能线索。下一页进一步展开，看看多轮补全如何让一个高度遮盖的输入逐渐完整。",
+          "sourceIds": [
+            "esm3official"
+          ],
+          "diagram": {
+            "kind": "protein-completion",
+            "labels": []
+          },
+          "seconds": 50,
+          "layout": "visual",
+          "caption": "已知条件保持固定；生成步骤持续增加候选中可确定的信息。",
+          "contentId": "02-10"
+        },
+        {
+          "type": "figure",
+          "title": "多轮补全如何形成完整候选",
+          "body": [
+            "从掩码输入开始",
+            "用新补全的信息继续预测其余位置"
+          ],
+          "notes": "一次条件生成可以分成多轮。开始时只固定少量信息，很多位置都还被遮盖。每一轮增加一部分确定内容，再把这些信息交给下一轮。这样，后续补全会利用前面已经生成的内容。整条序列完成后，研究者再读取结构和功能相关指标，比较不同候选。",
+          "sourceIds": [
+            "esm3official"
+          ],
+          "seconds": 50,
+          "contentId": "02-11",
+          "figure": {
+            "path": "assets/esm3.webp",
+            "crop": [
+              0.34518828451882844,
+              0.23937761819269898,
+              0.5622384937238494,
+              0.5266307600239377
+            ],
+            "alt": "多轮补全如何形成完整候选",
+            "credit": "EvolutionaryScale, ESM3，esm3",
+            "sourceUrl": "https://www.evolutionaryscale.ai/blog/esm3-release"
+          },
+          "layout": "paper-side",
+          "caption": "几何注意力将结构条件连接到联合建模"
+        },
+        {
+          "type": "figure",
+          "title": "用荧光测量连接生成与筛选",
+          "body": [
+            "两轮生成与荧光测量，逐步选择候选。"
+          ],
+          "notes": "荧光蛋白把模型输出和可观察现象连接了起来。模型先提出序列，随后研究者测量这些序列对应蛋白的荧光，再把获得的线索用于下一轮设计。读这类研究时，可以跟踪候选怎样进入下一步，以及每个阶段使用什么测量。这样能看见模型在整个发现过程中具体承担的作用。",
+          "sourceIds": [
+            "esm3official"
+          ],
+          "seconds": 50,
+          "contentId": "02-12",
+          "figure": {
+            "path": "assets/gfp.webp",
+            "crop": [
+              0,
+              0,
+              1,
+              1
+            ],
+            "alt": "用荧光测量连接生成与筛选",
+            "credit": "EvolutionaryScale, ESM3，gfp",
+            "sourceUrl": "https://www.evolutionaryscale.ai/blog/esm3-release"
+          },
+          "layout": "paper-wide",
+          "caption": "第一轮B8继续进入下一轮生成与筛选，得到C10（esmGFP）"
+        },
+        {
+          "type": "figure",
+          "title": "esmGFP案例：生成与荧光测量相衔接",
+          "body": [
+            "esmGFP是生成后筛选得到的荧光蛋白",
+            "局部结构条件连接到可测量的功能"
+          ],
+          "notes": "荧光蛋白的价值在于能把分子功能变成直接的测量信号。ESM3研究用局部条件引导候选，再根据荧光结果继续推进设计。我们在这里重点跟踪流程：条件进入模型，候选进入测量，测量结果帮助继续选择。它说明多模态生成怎样参与一个有明确目标的发现过程。",
+          "sourceIds": [
+            "esm3official"
+          ],
+          "seconds": 50,
+          "contentId": "02-13",
+          "figure": {
+            "path": "assets/gfp_structure.webp",
+            "crop": [
+              0,
+              0,
+              1,
+              1
+            ],
+            "alt": "esmGFP案例：生成与荧光测量相衔接",
+            "credit": "EvolutionaryScale, ESM3，gfp_structure",
+            "sourceUrl": "https://www.evolutionaryscale.ai/blog/esm3-release"
+          },
+          "layout": "paper-side",
+          "caption": "esmGFP结构展示，EvolutionaryScale"
+        },
+        {
+          "type": "figure",
+          "title": "AlphaFold 3 的问题设定",
+          "body": [
+            "给定分子组分",
+            "预测组分间的空间结构"
+          ],
+          "notes": "AlphaFold 3把问题扩展到多种生物分子的组合。我们给出研究中的分子组分，模型预测它们在空间中怎样排列。图中的连接表示把多种输入交给同一结构任务。后续分析会分别观察单体构象和分子界面，因为整体看起来完整，还需要细读研究真正关心的局部区域。",
+          "sourceIds": [
+            "af3"
+          ],
+          "seconds": 50,
+          "contentId": "02-14",
+          "figure": {
+            "path": "assets/af31.png",
+            "crop": [
+              0.5198487712665406,
+              0.0,
+              0.48015122873345933,
+              0.3111653447223917
+            ],
+            "alt": "AlphaFold 3 的问题设定",
+            "credit": "Abramson et al., Nature 2024，Fig. 1",
+            "sourceUrl": "https://www.nature.com/articles/s41586-024-07487-w"
+          },
+          "layout": "paper-side",
+          "caption": "模型输出不同分子组分之间的相对空间排列"
+        },
+        {
+          "type": "figure",
+          "title": "结构生成怎样逐步调整空间坐标",
+          "body": [
+            "AF3利用条件信息，通过扩散模块逐步生成坐标。"
+          ],
+          "notes": "可以把结构生成理解成逐步调整一组空间位置。模型利用分子身份和相互关系提供条件，坐标在多轮更新中逐渐形成结构。扩散式生成提供了这样一种建模方式。得到多个候选以后，我们再比较局部构象和界面，聚焦于研究所关心的分子区域。",
+          "sourceIds": [
+            "af3"
+          ],
+          "seconds": 50,
+          "contentId": "02-15",
+          "figure": {
+            "path": "assets/af31.png",
+            "crop": [
+              0.4773156899810964,
+              0.7046979865771812,
+              0.5226843100189036,
+              0.2654057352043929
+            ],
+            "alt": "结构生成怎样逐步调整空间坐标",
+            "credit": "Abramson et al., Nature 2024，Fig. 1",
+            "sourceUrl": "https://www.nature.com/articles/s41586-024-07487-w"
+          },
+          "layout": "paper-wide",
+          "caption": "Pairformer提供条件表示，扩散模块生成原子坐标"
+        },
+        {
+          "type": "figure",
+          "title": "复合物结构意味着什么",
+          "body": [
+            "先看单体构象，再看分子之间的接触区域。"
+          ],
+          "notes": "第一层是单个分子的构象，例如蛋白链怎样折叠。第二层是分子界面，例如配体落在什么位置、与哪些区域接近。第三层再结合任务做解释：某个界面是否支持我们提出的结合假设，后续应该比较哪些候选。把这三个层次分开，阅读结构图就会更有顺序。",
+          "sourceIds": [
+            "af3"
+          ],
+          "seconds": 50,
+          "table": {
+            "headers": [
+              "观察层次",
+              "要读的信息",
+              "对应问题"
+            ],
+            "rows": [
+              [
+                "单体构象",
+                "残基排列与局部折叠",
+                "关键区域处于什么构象？"
+              ],
+              [
+                "分子界面",
+                "接触、距离与朝向",
+                "哪些组分在空间中相邻？"
+              ],
+              [
+                "功能解释",
+                "结构特征与测量的联系",
+                "优先检验哪种结合假设？"
+              ]
+            ]
+          },
+          "contentId": "02-16"
+        },
+        {
+          "type": "concept",
+          "title": "pLDDT与PAE分别帮助读什么",
+          "body": [
+            "局部置信度与相对位置误差，帮助阅读不同层次的结构。"
+          ],
+          "notes": "读结构时，经常会看到局部置信度和相对误差。pLDDT帮助观察某个残基附近的局部结构，PAE则帮助观察一个区域相对另一区域的位置是否稳定。分析复合物时，还要把关注点放到不同组分之间的界面。这样就能从整张结构图逐渐缩小到真正需要解释的区域。",
+          "sourceIds": [
+            "af3"
+          ],
+          "table": {
+            "headers": [
+              "信息",
+              "主要观察对象",
+              "阅读动作"
+            ],
+            "rows": [
+              [
+                "pLDDT",
+                "局部残基环境",
+                "定位结构较确定的区域"
+              ],
+              [
+                "PAE",
+                "区域之间的相对位置",
+                "检查结构域或链间关系"
+              ],
+              [
+                "界面特征",
+                "不同分子的接触区域",
+                "结合任务查看关键接触"
+              ]
+            ]
+          },
+          "seconds": 50,
+          "contentId": "02-17"
+        },
+        {
+          "type": "compare",
+          "title": "ESM3 与 AF3 如何分工",
+          "body": [
+            "已知条件与目标输出，决定模型的分工。"
+          ],
+          "notes": "现在把两个模型放进同一个表。若已经有一部分结构或功能要求，并希望得到新序列，重点看ESM3的条件生成。如果已经选定分子组分，希望理解其空间组合，重点看AF3的结构预测。实际流程可以把这些能力连接起来，例如先获得候选序列，再研究候选与目标分子的结构关系。",
+          "sourceIds": [
+            "esm3official",
+            "af3"
+          ],
+          "table": {
+            "headers": [
+              "维度",
+              "ESM3",
+              "AlphaFold 3"
+            ],
+            "rows": [
+              [
+                "主要能力",
+                "蛋白质条件生成",
+                "分子复合物结构"
+              ],
+              [
+                "典型输入",
+                "部分序列/结构/功能",
+                "给定分子组分"
+              ],
+              [
+                "主要追问",
+                "候选满足哪些条件？",
+                "结构与界面可信吗？"
+              ]
+            ]
+          },
+          "seconds": 50,
+          "contentId": "02-18"
+        },
+        {
+          "type": "case",
+          "title": "一个候选的筛选流程",
+          "body": [
+            "候选先满足设计条件，再逐层筛选并进入测量。"
+          ],
+          "notes": "一次生成通常会得到多个候选。第一轮筛选先看硬条件是否满足，比如指定残基是否保留。随后比较结构特征、序列特征以及与研究目标有关的指标。筛选标准需要有优先级，避免每项指标都要求第一。进入测量以后，新信息又可以帮助我们调整下一轮生成的条件。",
+          "sourceIds": [
+            "esm3official",
+            "af3"
+          ],
+          "diagram": {
+            "kind": "flow",
+            "labels": [
+              "约束检查",
+              "计算筛选",
+              "人工审阅",
+              "目标实验"
+            ]
+          },
+          "seconds": 50,
+          "contentId": "02-19",
+          "layout": "visual",
+          "caption": "实验结果可用于调整条件，继续筛选下一轮候选"
+        },
+        {
+          "type": "concept",
+          "title": "把候选筛选写成一张检查表",
+          "body": [
+            "按研究目标确定候选筛选的先后顺序。"
+          ],
+          "notes": "例如希望保留一个局部结构，首先检查指定条件有没有满足。然后查看候选的整体结构和界面，再结合任务安排功能测量。表中的记录方式比只展示一张结构图片更有用，因为它解释了为什么这个候选进入下一步。研究目标不同，检查项与优先级也会随之调整。",
+          "sourceIds": [
+            "esm3official",
+            "af3"
+          ],
+          "table": {
+            "headers": [
+              "筛选层",
+              "检查内容",
+              "留下的记录"
+            ],
+            "rows": [
+              [
+                "设计条件",
+                "残基、构象或功能条件",
+                "条件匹配结果"
+              ],
+              [
+                "结构特征",
+                "整体构象与关键界面",
+                "结构分析及置信信息"
+              ],
+              [
+                "目标性质",
+                "荧光、活性或其他任务量",
+                "测量值与候选排序"
+              ]
+            ]
+          },
+          "seconds": 50,
+          "contentId": "02-20"
+        },
+        {
+          "type": "concept",
+          "title": "让指标对应序列、结构与功能",
+          "body": [
+            "评价指标对应模型实际输出的层次。"
+          ],
+          "notes": "评价可以沿着今天的三种描述展开。序列层关心残基或蛋白性质，结构层关心几何和界面，功能层关心实际作用的测量。同一候选在不同层次上会产生不同信息。把它们放在一个有顺序的记录中，既方便筛选，也方便解释某个候选为什么值得进一步研究。",
+          "sourceIds": [
+            "af3",
+            "esm3"
+          ],
+          "seconds": 50,
+          "contentId": "02-21",
+          "table": {
+            "headers": [
+              "任务层次",
+              "输出对象",
+              "评价依据"
+            ],
+            "rows": [
+              [
+                "序列任务",
+                "位点或整体性质",
+                "分类或回归表现"
+              ],
+              [
+                "结构任务",
+                "构象与接触界面",
+                "几何与界面质量"
+              ],
+              [
+                "功能任务",
+                "荧光或活性",
+                "实际实验测量"
+              ]
+            ]
+          }
+        },
+        {
+          "type": "figure",
+          "title": "分子界面的局部阅读",
+          "body": [
+            "结构图呈现相互作用界面",
+            "局部放大帮助定位残基与配体"
+          ],
+          "notes": "图中展示AlphaFold 3论文的结构案例局部。先分辨不同组分，再沿界面寻找相邻残基与配体。灰色和着色结构用于对照预测与参考构象。解释时关注局部空间排列，把位置映射回链和残基编号。",
+          "sourceIds": [
+            "af3"
+          ],
+          "seconds": 65,
+          "contentId": "02-22",
+          "figure": {
+            "path": "assets/af31.png",
+            "crop": [
+              0.5198487712665406,
+              0.012202562538133009,
+              0.30245746691871456,
+              0.2684563758389262
+            ],
+            "alt": "分子界面的局部阅读",
+            "credit": "Abramson et al., Nature 2024，Fig. 1",
+            "sourceUrl": "https://www.nature.com/articles/s41586-024-07487-w"
+          },
+          "layout": "paper-side",
+          "caption": "着色预测结构与灰色参考结构的局部对照"
+        },
+        {
+          "type": "summary",
+          "title": "本课小结",
+          "body": [
+            "ESM3：条件补全与候选生成",
+            "AF3：给定组分的结构预测",
+            "测量：连接设计与实际性质"
+          ],
+          "notes": "这一课从MKT三个残基开始，逐步增加了结构、功能和多分子信息。ESM3说明了怎样把已知条件放进生成过程，AF3说明了怎样处理复合物结构。下一课会改变观察尺度：从一条分子序列转向一个细胞的基因表达，输入也随之变成高维矩阵。",
+          "sourceIds": [
+            "survey",
+            "esm3",
+            "af3"
+          ],
+          "seconds": 50,
+          "contentId": "02-23"
+        },
+        {
+          "type": "references",
+          "title": "延伸阅读",
+          "body": [],
+          "notes": "延伸阅读可以从ESM3的多轨道训练图和AF3的模型总图开始。先找到输入描述，再沿图追踪输出。荧光蛋白案例适合进一步阅读候选设计和测量之间怎样衔接。阅读时可以把本文的输入、目标、输出与筛选方式整理成一页笔记。",
+          "sourceIds": [
+            "esm3",
+            "esm3official",
+            "af3"
+          ],
+          "seconds": 20,
+          "contentId": "02-24"
+        }
+      ],
+      "durationSeconds": 1080,
+      "estimatedTiming": {
+        "status": "estimated_not_rehearsed",
+        "speechRateChineseCharsPerMinute": [
+          170,
+          210
+        ],
+        "plannedPauseSeconds": 120,
+        "targetMinutes": 18
+      }
+    },
+    {
+      "id": "03",
+      "title": "单细胞与空间模型",
+      "slides": [
+        {
+          "type": "cover",
+          "title": "单细胞与空间模型",
+          "body": [
+            "从细胞×基因矩阵到细胞表示",
+            "scGPT、Geneformer与Nicheformer"
+          ],
+          "notes": "同样拥有基因组的细胞，为什么会表现出不同的类型与状态？这一课把输入从一条分子序列换成表达矩阵。我们先读懂矩阵中的每个数，再认识scGPT和Geneformer的编码方式，最后加入细胞在组织中的位置与邻域，理解Nicheformer的任务。",
+          "sourceIds": [
+            "survey",
+            "scgpt",
+            "niche"
+          ],
+          "seconds": 20,
+          "contentId": "03-01"
+        },
+        {
+          "type": "concept",
+          "title": "本课要回答的问题",
+          "body": [
+            "表达矩阵得到细胞表示后，可以接入不同任务。"
+          ],
+          "notes": "这一课有三个层次。首先弄清矩阵中的数值怎样得到，然后看模型怎样把一行表达谱转换成向量，最后把细胞放回组织。每一步都配一个具体例子。到最后，我们会用参考标签完成一次细胞注释判断，再用邻居计数算出一个组成向量。",
+          "sourceIds": [
+            "scgpt",
+            "niche"
+          ],
+          "diagram": {
+            "kind": "learning-map",
+            "input": "matrix",
+            "outputs": [
+              "细胞类型注释",
+              "空间相关任务"
+            ]
+          },
+          "seconds": 35,
+          "contentId": "03-02",
+          "layout": "visual",
+          "caption": "细胞注释预测身份；空间相关任务读取区域或邻域信息"
+        },
+        {
+          "type": "concept",
+          "title": "细胞类型与细胞状态",
+          "body": [
+            "类型描述细胞身份，状态描述当前的活动与变化。"
+          ],
+          "notes": "类型和状态可以同时出现在一个细胞上。一个T细胞在静息和激活时仍属于T细胞，但表达谱会改变。模型需要学习这种层次关系。若任务是类型注释，希望抓住稳定身份；若任务是响应分析，就要观察状态相关的变化。接下来先看这些差异怎样进入表达矩阵。",
+          "sourceIds": [
+            "scgpt",
+            "geneformer"
+          ],
+          "seconds": 50,
+          "contentId": "03-03",
+          "table": {
+            "headers": [
+              "观察维度",
+              "含义",
+              "例子"
+            ],
+            "rows": [
+              [
+                "细胞类型",
+                "相对稳定的身份",
+                "T细胞、B细胞"
+              ],
+              [
+                "细胞状态",
+                "当前的活动状态",
+                "静息、激活、应激"
+              ]
+            ]
+          },
+          "takeaway": "同一个T细胞由静息转为激活时，细胞类型仍是T细胞。"
+        },
+        {
+          "type": "concept",
+          "title": "一个T细胞可以处于不同状态",
+          "body": [
+            "T细胞从静息转为激活时，类型保持不变。"
+          ],
+          "notes": "可以把身份和状态想成两组同时存在的标签。一个T细胞在不同时间仍属于T细胞，但某些表达程序已经启动或减弱。因此，训练一个类型分类器时，我们希望它理解稳定身份；研究刺激响应时，重点又转向动态变化。这个区分会一直影响后面的标签定义和表示读取。",
+          "sourceIds": [
+            "scgpt",
+            "geneformer"
+          ],
+          "seconds": 50,
+          "contentId": "03-04",
+          "diagram": {
+            "kind": "cell-state"
+          },
+          "layout": "visual",
+          "caption": "类型注释关注稳定身份，状态分析关注表达模式的变化"
+        },
+        {
+          "type": "case",
+          "title": "读一张表达矩阵",
+          "body": [
+            "每行是一个细胞，每列是一个基因。"
+          ],
+          "notes": "先横着读甲细胞，它在基因A上为八、基因B上为一、基因C上为零。再纵着比较基因A，可以看到三个细胞的表达水平不同。矩阵的作用是同时组织细胞之间与基因之间的关系。模型会从每一行以及跨细胞重复出现的模式中学习表示。下一页再解释原始计数怎样转成模型输入。",
+          "sourceIds": [
+            "scgpt"
+          ],
+          "table": {
+            "headers": [
+              "细胞",
+              "基因A",
+              "基因B",
+              "基因C"
+            ],
+            "rows": [
+              [
+                "甲细胞",
+                "8",
+                "1",
+                "0"
+              ],
+              [
+                "乙细胞",
+                "1",
+                "7",
+                "0"
+              ],
+              [
+                "丙细胞",
+                "3",
+                "2",
+                "6"
+              ]
+            ]
+          },
+          "seconds": 50,
+          "contentId": "03-05"
+        },
+        {
+          "type": "concept",
+          "title": "从计数到模型输入经历什么",
+          "body": [
+            "按模型要求完成质控、归一化与数值编码。"
+          ],
+          "notes": "先检查每个细胞的测量量和可用基因，再采用与模型相匹配的数值处理。归一化帮助处理测量规模的差异，分箱或排序则把数值组织成模型要求的形式。表中强调的是处理顺序：每一步都改变输入含义，因此应用检查点时需要一起保留预处理规则。",
+          "sourceIds": [
+            "scgpt",
+            "geneformer"
+          ],
+          "table": {
+            "headers": [
+              "阶段",
+              "处理对象",
+              "产生的结果"
+            ],
+            "rows": [
+              [
+                "计数矩阵",
+                "细胞与基因的测量",
+                "每项输入的原始数值"
+              ],
+              [
+                "数值处理",
+                "测量深度与值域",
+                "可比较的表达信息"
+              ],
+              [
+                "模型编码",
+                "基因、数值或排序",
+                "检查点要求的token输入"
+              ]
+            ]
+          },
+          "seconds": 50,
+          "contentId": "03-06"
+        },
+        {
+          "type": "process",
+          "title": "从表达矩阵到模型输入",
+          "body": [
+            "确认基因身份、表达处理方式和测量面板。"
+          ],
+          "notes": "模型读矩阵以前，先要对齐基因身份，再采用与模型匹配的表达处理方式。比如某列换了顺序，输入值就必须跟着基因标识一起移动。测量面板也要记录，因为空间技术有时只测一部分基因。把这些信息组织清楚，才能让后面的表示具有一致含义。",
+          "sourceIds": [
+            "scgpt"
+          ],
+          "seconds": 50,
+          "table": {
+            "headers": [
+              "数据步骤",
+              "需要确认",
+              "常见问题"
+            ],
+            "rows": [
+              [
+                "基因标识",
+                "各列对应同一基因",
+                "别名或列顺序混淆"
+              ],
+              [
+                "表达处理",
+                "符合模型训练规范",
+                "计数与归一化值混用"
+              ],
+              [
+                "基因面板",
+                "未测与低表达区分",
+                "缺失被解释为生物零"
+              ]
+            ]
+          },
+          "contentId": "03-07"
+        },
+        {
+          "type": "figure",
+          "title": "scGPT 的表示思路",
+          "body": [
+            "基因身份与表达值分别编码",
+            "再组合成每个基因的输入表示"
+          ],
+          "notes": "拿甲细胞来看，第一个输入项由基因A和表达信息八共同组成。基因告诉模型正在观察哪个分子特征，表达值告诉模型这项特征在当前细胞中的水平。随后编码器把各项信息联系起来，学习基因之间的组合模式。读取这些向量，就可以进一步得到位置级或细胞级的表示。",
+          "sourceIds": [
+            "scgpt"
+          ],
+          "seconds": 50,
+          "contentId": "03-08",
+          "figure": {
+            "path": "assets/scgpt1.png",
+            "crop": [
+              0.7156048014773777,
+              0.0,
+              0.28439519852262235,
+              0.24760832864378166
+            ],
+            "alt": "scGPT 的表示思路",
+            "credit": "Cui et al., Nat. Methods 2024，Fig. 1",
+            "sourceUrl": "https://www.nature.com/articles/s41592-024-02201-0"
+          },
+          "layout": "paper-side",
+          "caption": "输入表示由基因、表达值及条件信息组合"
+        },
+        {
+          "type": "figure",
+          "title": "遮盖表达信息怎样训练细胞表示",
+          "body": [
+            "可见基因提供上下文",
+            "注意力模块学习表达组合关系"
+          ],
+          "notes": "把刚才甲细胞的某项表达信息藏起来，模型就需要利用其他可见项进行预测。大量细胞反复提供这样的训练任务，编码器会逐步学习基因组合。预训练完成以后，再选择合适的细胞级表示接到目标任务。这里可以看到，预训练负责学通用模式，任务头负责读出研究需要的信息。",
+          "sourceIds": [
+            "scgpt"
+          ],
+          "seconds": 50,
+          "contentId": "03-09",
+          "figure": {
+            "path": "assets/scgpt1.png",
+            "crop": [
+              0.7156048014773777,
+              0.24760832864378166,
+              0.28439519852262235,
+              0.20258863252673046
+            ],
+            "alt": "遮盖表达信息怎样训练细胞表示",
+            "credit": "Cui et al., Nat. Methods 2024，Fig. 1",
+            "sourceUrl": "https://www.nature.com/articles/s41592-024-02201-0"
+          },
+          "layout": "paper-side",
+          "caption": "注意力连接可见信息，前馈网络继续变换表示"
+        },
+        {
+          "type": "figure",
+          "title": "细胞注释怎样完成",
+          "body": [
+            "新细胞先经过同样的输入处理，再由任务头输出类型。"
+          ],
+          "notes": "把单细胞模型接到注释任务，第一步是准备有标签的参考细胞。模型计算表示，任务头学习表示与细胞类型之间的关系。新细胞使用相同的基因对齐和预处理流程，再交给分类头。结果可以按类型分别统计，这样能看出某些相近类型在哪些条件下容易混淆。",
+          "sourceIds": [
+            "scgpt"
+          ],
+          "seconds": 50,
+          "contentId": "03-10",
+          "figure": {
+            "path": "assets/scgpt1.png",
+            "crop": [
+              0.0,
+              0.2504220596510974,
+              0.487072945521699,
+              0.20540236353404615
+            ],
+            "alt": "细胞注释怎样完成",
+            "credit": "Cui et al., Nat. Methods 2024，Fig. 1",
+            "sourceUrl": "https://www.nature.com/articles/s41592-024-02201-0"
+          },
+          "layout": "paper-wide",
+          "caption": "任务监督把预训练表示接到新的细胞数据上"
+        },
+        {
+          "type": "concept",
+          "title": "细胞注释结果的混淆矩阵",
+          "body": [
+            "对角线是正确分类，非对角线显示容易混淆的类型。"
+          ],
+          "notes": "这张表一共有二十个带标签的细胞。真实T类有十个，其中八个被判为T，两个被判为B；真实B类也有十个，其中九个被判为B，一个被判为T。所以总体正确的是十七个，准确率为百分之八十五。继续读行列，还能分别计算每个类型的精确率和召回率。",
+          "sourceIds": [
+            "scgpt"
+          ],
+          "table": {
+            "headers": [
+              "真实标签",
+              "预测T类",
+              "预测B类"
+            ],
+            "rows": [
+              [
+                "T类",
+                "8",
+                "2"
+              ],
+              [
+                "B类",
+                "1",
+                "9"
+              ]
+            ]
+          },
+          "seconds": 50,
+          "contentId": "03-11"
+        },
+        {
+          "type": "compare",
+          "title": "Geneformer 的输入对照",
+          "body": [
+            "Geneformer采用相对排序，scGPT编码基因身份与表达值。"
+          ],
+          "notes": "两种模型提供了有用的编码对照。Geneformer用经过处理的表达排序组织基因token，scGPT把基因身份与表达值信息结合起来。它们都可以学习细胞表示，但同一行数据进入模型的形式不同。使用现成检查点时，首先遵循对应的输入规则，再决定细胞表示怎样接到任务头。",
+          "sourceIds": [
+            "geneformer",
+            "scgpt"
+          ],
+          "table": {
+            "headers": [
+              "维度",
+              "Geneformer",
+              "scGPT"
+            ],
+            "rows": [
+              [
+                "输入重点",
+                "经处理的基因排序",
+                "基因身份与表达值"
+              ],
+              [
+                "共同目标",
+                "细胞/基因表示",
+                "细胞/基因表示"
+              ],
+              [
+                "比较前提",
+                "匹配数据和任务设置",
+                "匹配数据和任务设置"
+              ]
+            ]
+          },
+          "seconds": 50,
+          "contentId": "03-12"
+        },
+        {
+          "type": "concept",
+          "title": "把表达值转换成基因排序",
+          "body": [
+            "先得到相对表达，再把基因排成token序列。"
+          ],
+          "notes": "设定处理后的相对表达中，B最高、A其次、C最低，那么排序序列就是B、A、C。排序把数值关系转成了顺序信息。Geneformer的实际流程还包含基于参考表达的处理，使用模型时直接复用官方tokenizer即可。这里的关键是区分原始数值与排序结果，理解模型真正读取了什么。",
+          "sourceIds": [
+            "geneformer"
+          ],
+          "table": {
+            "headers": [
+              "基因",
+              "处理后的相对表达",
+              "排序位置"
+            ],
+            "rows": [
+              [
+                "A",
+                "2",
+                "2"
+              ],
+              [
+                "B",
+                "5",
+                "1"
+              ],
+              [
+                "C",
+                "1",
+                "3"
+              ]
+            ]
+          },
+          "seconds": 50,
+          "contentId": "03-13"
+        },
+        {
+          "type": "figure",
+          "title": "批次整合同时关注技术与生物信号",
+          "body": [
+            "整合时让技术批次相互混合",
+            "同时保留细胞类型等生物差异"
+          ],
+          "notes": "假设两个实验批次分别采集了相似类型的细胞。理想的整合应该让相同类型跨批次接近，同时保留不同类型的分离。反过来，若把所有细胞都压到一起，也会丢失有意义的结构。读整合结果时，可以分别按批次上色和按类型上色，观察这两个目标怎样同时实现。",
+          "sourceIds": [
+            "scgpt"
+          ],
+          "seconds": 50,
+          "contentId": "03-14",
+          "figure": {
+            "path": "assets/scgpt1.png",
+            "crop": [
+              0.48938134810710987,
+              0,
+              0.2169898430286242,
+              0.16319639842431063
+            ],
+            "alt": "批次整合同时关注技术与生物信号",
+            "credit": "Cui et al., Nat. Methods 2024，Fig. 1",
+            "sourceUrl": "https://www.nature.com/articles/s41592-024-02201-0"
+          },
+          "layout": "paper-side",
+          "caption": "图中上方为聚类与批次校正两个下游方向"
+        },
+        {
+          "type": "figure",
+          "title": "空间转录组增加了什么",
+          "body": [
+            "空间测量保留组织位置",
+            "表达谱由此连接到切片上的局部区域"
+          ],
+          "notes": "解离单细胞数据擅长描述细胞表达，空间转录组进一步保留组织中的位置。现在可以问：这个细胞附近有哪些其他类型，它属于哪个组织区域，这些邻居与它的状态有什么关系？表中把表达、位置和区域标签分开列出，帮助我们明确每项任务需要读取哪些字段。",
+          "sourceIds": [
+            "niche"
+          ],
+          "seconds": 50,
+          "contentId": "03-15",
+          "figure": {
+            "path": "assets/niche1.png",
+            "crop": [
+              0.730804810360777,
+              0.07557864903164856,
+              0.26919518963922295,
+              0.14643363249881908
+            ],
+            "alt": "空间转录组增加了什么",
+            "credit": "Nicheformer, Nat. Methods 2025，Fig. 1",
+            "sourceUrl": "https://www.nature.com/articles/s41592-025-02814-z"
+          },
+          "layout": "paper-side",
+          "caption": "MERFISH小鼠脑与CosMx人肝的空间数据示例"
+        },
+        {
+          "type": "concept",
+          "title": "把细胞放回组织中的位置",
+          "body": [
+            "坐标确定中心细胞的位置",
+            "邻域规则确定纳入哪些周围细胞"
+          ],
+          "notes": "看右侧的中心细胞与周围点。先利用坐标确定邻居，再对邻居的标签做统计，就可以得到局部微环境的描述。邻域可以由距离或最近邻规则决定，范围越大，描述的尺度也越大。这一步把空间位置转成了可以学习和比较的目标。",
+          "sourceIds": [
+            "niche"
+          ],
+          "diagram": {
+            "kind": "spatial",
+            "labels": []
+          },
+          "seconds": 50,
+          "contentId": "03-16"
+        },
+        {
+          "type": "figure",
+          "title": "Nicheformer 的学习与任务",
+          "body": [
+            "排序基因与上下文标记，共同进入Nicheformer。"
+          ],
+          "notes": "Nicheformer把两类来源的数据放在一个学习框架中：解离细胞和具有空间信息的细胞。细胞输入由排序后的基因token和来源上下文标记组成。预训练学习细胞表达的共现模式，任务适配再连接到空间标签或邻域组成。这样可以把空间数据提供的信息迁移到更广泛的细胞分析中。",
+          "sourceIds": [
+            "niche"
+          ],
+          "seconds": 50,
+          "contentId": "03-17",
+          "figure": {
+            "path": "assets/niche1.png",
+            "crop": [
+              0.0,
+              0.7038261691072272,
+              0.5735430157261795,
+              0.26452527161076994
+            ],
+            "alt": "Nicheformer 的学习与任务",
+            "credit": "Nicheformer, Nat. Methods 2025，Fig. 1",
+            "sourceUrl": "https://www.nature.com/articles/s41592-025-02814-z"
+          },
+          "layout": "paper-wide",
+          "caption": "上下文标记在前，排序后的基因token在后"
+        },
+        {
+          "type": "concept",
+          "title": "Nicheformer怎样标识数据来源",
+          "body": [
+            "物种、模态和技术标记，补充表达序列的来源信息。"
+          ],
+          "notes": "来自不同技术的数据会有不同的基因面板与数值分布。Nicheformer因此在基因token之外加入上下文标记，告诉模型数据来自哪种物种、模态和技术。这些标记和表达排序一起进入编码器。模型可以一边学习共同的细胞规律，一边利用来源信息解释差异。",
+          "sourceIds": [
+            "niche"
+          ],
+          "table": {
+            "headers": [
+              "输入部分",
+              "携带的信息",
+              "作用"
+            ],
+            "rows": [
+              [
+                "基因token",
+                "处理后的基因排序",
+                "描述细胞表达组合"
+              ],
+              [
+                "物种token",
+                "人或小鼠等来源",
+                "连接共享与物种相关信息"
+              ],
+              [
+                "模态／技术token",
+                "解离或空间及测量技术",
+                "描述数据产生的上下文"
+              ]
+            ]
+          },
+          "seconds": 50,
+          "contentId": "03-18"
+        },
+        {
+          "type": "case",
+          "title": "从表达推测邻域组成",
+          "body": [
+            "把邻居类型的计数转成比例，就得到邻域组成。"
+          ],
+          "notes": "看邻域甲这一行，T类占六成，B类占四分之一，其余类型占剩余部分。邻域乙则以B类为主。这种向量是空间组成任务的一种输出形式。模型可以在有空间参考标签的数据上学习表达与组成之间的联系，再对新细胞产生组成估计。下一页先用计数亲手计算一次比例。",
+          "sourceIds": [
+            "niche"
+          ],
+          "seconds": 50,
+          "table": {
+            "headers": [
+              "邻域",
+              "T类比例",
+              "B类比例",
+              "其他类比例"
+            ],
+            "rows": [
+              [
+                "甲",
+                "0.60",
+                "0.25",
+                "0.15"
+              ],
+              [
+                "乙",
+                "0.10",
+                "0.70",
+                "0.20"
+              ]
+            ]
+          },
+          "contentId": "03-19"
+        },
+        {
+          "type": "concept",
+          "title": "邻居计数怎样变成组成向量",
+          "body": [
+            "10个邻居：T类6，B类3，其他1",
+            "组成向量为(0.6，0.3，0.1)"
+          ],
+          "notes": "先把六、三、一加起来，总共十个邻居。再分别除以十，就得到三类比例。这个组成向量比逐个罗列邻居更紧凑，适合用来比较微环境。训练任务可以把中心细胞的表达表示作为输入，把由空间参考数据计算出的组成作为目标。这样我们就把坐标信息转成了明确的学习标签。",
+          "sourceIds": [
+            "niche"
+          ],
+          "seconds": 50,
+          "contentId": "03-20",
+          "diagram": {
+            "kind": "spatial",
+            "labels": []
+          }
+        },
+        {
+          "type": "concept",
+          "title": "围绕新供体、新组织与新平台评估",
+          "body": [
+            "评估边界与未来的数据来源保持一致。"
+          ],
+          "notes": "模型可能遇到新的供体、组织或测量技术。需要先决定目标场景，再据此设计数据划分。比如将来要处理另一组织，就应把跨组织测试放在重要位置；若目标是另一平台，就关注基因面板和平台差异。细分结果能帮助我们选择合适的模型，也帮助确定接下来优先补哪些参考数据。",
+          "sourceIds": [
+            "cellbench",
+            "niche"
+          ],
+          "diagram": {
+            "kind": "holdout",
+            "rows": [
+              [
+                "供体",
+                "既有供体",
+                "新供体"
+              ],
+              [
+                "组织",
+                "既有组织",
+                "新组织"
+              ],
+              [
+                "平台",
+                "既有平台",
+                "新平台"
+              ]
+            ]
+          },
+          "seconds": 50,
+          "contentId": "03-21",
+          "layout": "visual",
+          "caption": "分别报告新供体、新组织或新平台中的表现"
+        },
+        {
+          "type": "figure",
+          "title": "空间任务的输出层次",
+          "body": [
+            "空间组成用邻居总数与各类型比例，描述中心细胞的周围环境。"
+          ],
+          "notes": "图中以中心细胞为参照，画出局部邻居。先数纳入邻域的细胞，得到细胞密度；再按细胞类型计数并除以总数，形成组成向量。这样，不同细胞所处的微环境可以用相同接口比较。Nicheformer把细胞表达表示接到这类组成预测任务上，监督目标来自带空间位置的参考数据。",
+          "sourceIds": [
+            "niche"
+          ],
+          "seconds": 65,
+          "contentId": "03-22",
+          "figure": {
+            "path": "assets/niche1.png",
+            "crop": [
+              0.5203515263644773,
+              0.23618327822390175,
+              0.47964847363552265,
+              0.14170996693434104
+            ],
+            "alt": "空间任务的输出层次",
+            "credit": "Nicheformer, Nat. Methods 2025，Fig. 1",
+            "sourceUrl": "https://www.nature.com/articles/s41592-025-02814-z"
+          },
+          "layout": "paper-wide",
+          "caption": "细胞密度对应邻居数量，邻域组成对应各类型的比例"
+        },
+        {
+          "type": "summary",
+          "title": "本课小结",
+          "body": [
+            "输入：表达矩阵与编码规则",
+            "表示：scGPT、Geneformer",
+            "空间任务：Nicheformer"
+          ],
+          "notes": "回顾本课，我们从矩阵中的八、一、零开始，逐步走到基因编码、细胞表示和空间组成。三个代表模型让我们看见，输入组织方式与训练数据来源会影响模型能利用的信息。下一课把这些知识放回整张模型地图，通过几个具体研究问题案例选型和任务适配。",
+          "sourceIds": [
+            "scgpt",
+            "geneformer",
+            "niche"
+          ],
+          "seconds": 50,
+          "contentId": "03-23"
+        },
+        {
+          "type": "references",
+          "title": "延伸阅读",
+          "body": [],
+          "notes": "本课建议重点阅读scGPT的输入与预训练框架，以及Nicheformer的细胞编码和空间任务图。Geneformer可以用来对照排序式编码。读图时先标出数据字段，再标出模型真正接收的输入，最后沿着任务头找到标签和输出。",
+          "sourceIds": [
+            "scgpt",
+            "geneformer",
+            "niche",
+            "cellbench"
+          ],
+          "seconds": 20,
+          "contentId": "03-24"
+        }
+      ],
+      "durationSeconds": 1080,
+      "estimatedTiming": {
+        "status": "estimated_not_rehearsed",
+        "speechRateChineseCharsPerMinute": [
+          170,
+          210
+        ],
+        "plannedPauseSeconds": 120,
+        "targetMinutes": 18
+      }
+    },
+    {
+      "id": "04",
+      "title": "跨模态与模型选型",
+      "slides": [
+        {
+          "type": "cover",
+          "title": "跨模态与模型选型",
+          "body": [
+            "跨核酸、蛋白质与细胞模型选型",
+            "以LucaOne连接不同序列对象"
+          ],
+          "notes": "最后一课把前面的知识组合起来。先看LucaOne怎样在同一框架里处理核酸与蛋白质，再围绕变异评分、细胞注释和复合物结构走三条选型路径。每条路径都会说清输入、任务头和输出，最后把数据与模型配置整理成一份可以再次运行的研究记录。",
+          "sourceIds": [
+            "survey",
+            "luca"
+          ],
+          "seconds": 20,
+          "contentId": "04-01"
+        },
+        {
+          "type": "concept",
+          "title": "本课要形成一份选型说明",
+          "body": [
+            "先根据数据对象筛选模型，再明确任务与评价。"
+          ],
+          "notes": "选型可以从一个很具体的问题开始：现在手里有哪些数据，想得到什么结果？这两个答案决定模型接口和需要读取的表示。随后才考虑标签够不够、是否微调以及如何运行。今天会用三个案例把这条路线走完整，最后形成一张记录表。",
+          "sourceIds": [
+            "survey",
+            "dnabench",
+            "cellbench"
+          ],
+          "diagram": {
+            "kind": "selection"
+          },
+          "seconds": 35,
+          "contentId": "04-02",
+          "layout": "visual",
+          "caption": "同一种输入仍可对应多个任务，最终选型还要检查具体版本和适配方式"
+        },
+        {
+          "type": "concept",
+          "title": "跨模态首先要说明跨什么",
+          "body": [
+            "先写清楚连接了哪些生物对象，再讨论跨模态能力。"
+          ],
+          "notes": "先把几种跨模态分清。ESM3把同一蛋白的序列、结构和功能放在一起；LucaOne连接核酸与蛋白质序列；细胞多组学又可能连接同一细胞的不同测量。三者都在利用互补信息，但对象、对齐方式与输出不同。选型时需要写清楚究竟跨了什么。",
+          "sourceIds": [
+            "esm3official",
+            "luca",
+            "multimodal"
+          ],
+          "seconds": 50,
+          "table": {
+            "headers": [
+              "跨什么信息",
+              "讨论对象",
+              "需要明确"
+            ],
+            "rows": [
+              [
+                "序列/结构/功能",
+                "ESM3",
+                "同一蛋白的不同描述"
+              ],
+              [
+                "核酸/蛋白质",
+                "LucaOne",
+                "不同分子对象的关联"
+              ],
+              [
+                "细胞多组学",
+                "研究方向",
+                "测量配对与输入条件"
+              ]
+            ]
+          },
+          "contentId": "04-03"
+        },
+        {
+          "type": "figure",
+          "title": "核酸与蛋白质怎样描述同一个产物",
+          "body": [
+            "编码DNA经转录成为mRNA，密码子再对应到氨基酸。"
+          ],
+          "notes": "看这三个密码子。编码DNA链上的ATG、AAA、ACC转录后对应AUG、AAA、ACC，再翻译成M、K、T。前两行使用核酸字母表，最后一行使用氨基酸字母表。理解这种联系，有助于思考统一模型可以从哪些对象之间共享信息，也有助于设计核酸与蛋白质相关的下游任务。",
+          "sourceIds": [
+            "luca"
+          ],
+          "seconds": 50,
+          "contentId": "04-04",
+          "layout": "visual",
+          "caption": "ATG／AUG对应M，AAA对应K，ACC对应T",
+          "diagram": {
+            "kind": "translation",
+            "labels": []
+          }
+        },
+        {
+          "type": "figure",
+          "title": "LucaOne 的建模范围",
+          "body": [
+            "LucaOne联合学习核酸与蛋白质序列。用统一模型得到可迁移表示。"
+          ],
+          "notes": "LucaOne首先统一了核酸与蛋白质的输入语言。它使用token身份、位置以及分子类型信息来区分并组织输入，再通过编码器学习上下文表示。后续任务可以读取位置级或序列级向量。接下来会把这几个输入分量画开，看看统一模型怎样处理两套字母表。",
+          "sourceIds": [
+            "luca"
+          ],
+          "seconds": 50,
+          "contentId": "04-05",
+          "figure": {
+            "path": "assets/luca1.png",
+            "crop": [
+              0.10594196222938738,
+              0.0,
+              0.8940580377706127,
+              0.2750179985601152
+            ],
+            "alt": "LucaOne 的建模范围",
+            "credit": "LucaOne, Nat. Mach. Intell. 2025，Fig. 1",
+            "sourceUrl": "https://www.nature.com/articles/s42256-025-01044-4"
+          },
+          "layout": "paper-wide",
+          "caption": "核酸与蛋白质数据汇入统一的序列表示学习"
+        },
+        {
+          "type": "figure",
+          "title": "LucaOne的统一输入由什么组成",
+          "body": [
+            "字符、位置与分子类型嵌入，共同构成模型输入。"
+          ],
+          "notes": "同一个字符在不同分子字母表中可能有不同含义，所以统一输入需要分子类型信息。token提供身份，类型信息说明当前处理的是核酸还是蛋白质，位置编码则提供顺序。它们共同进入编码器，输出可以供位置级、片段级或整段序列任务读取。",
+          "sourceIds": [
+            "luca"
+          ],
+          "seconds": 50,
+          "contentId": "04-06",
+          "figure": {
+            "path": "assets/luca1.png",
+            "crop": [
+              0.1312759097190235,
+              0.48596112311015116,
+              0.3316444035006909,
+              0.08639308855291576
+            ],
+            "alt": "LucaOne的统一输入由什么组成",
+            "credit": "LucaOne, Nat. Mach. Intell. 2025，Fig. 1",
+            "sourceUrl": "https://www.nature.com/articles/s42256-025-01044-4"
+          },
+          "layout": "paper-wide",
+          "caption": "E表示字符嵌入，P表示位置，T表示分子类型"
+        },
+        {
+          "type": "process",
+          "title": "“联合”怎样得到检验",
+          "body": [
+            "比较联合学习效果时，固定数据划分和任务头。"
+          ],
+          "notes": "研究联合训练的作用，可以准备核酸单独学习、蛋白单独学习和联合学习几种表示，再在相同任务上进行比较。下游任务头和标签条件保持一致，结果就更容易归因到表示本身。LucaOne论文也通过这类对照研究联合学习带来的变化。",
+          "sourceIds": [
+            "luca"
+          ],
+          "seconds": 50,
+          "table": {
+            "headers": [
+              "比较方案",
+              "表示来自哪里",
+              "保持一致"
+            ],
+            "rows": [
+              [
+                "分别学习",
+                "核酸/蛋白模型",
+                "下游数据与标签量"
+              ],
+              [
+                "联合学习",
+                "统一模型",
+                "任务头与评价划分"
+              ],
+              [
+                "简单基线",
+                "基础编码或统计量",
+                "同一目标与指标"
+              ]
+            ]
+          },
+          "contentId": "04-07"
+        },
+        {
+          "type": "figure",
+          "title": "LucaOne怎样组织多层次训练信号",
+          "body": [
+            "局部字符恢复与片段分类，提供不同层次的训练信号。"
+          ],
+          "notes": "LucaOne除了恢复被遮盖的字符，还利用不同层次的注释。片段层可以关联基因区域或蛋白结构域，序列层可以关联分类和功能标签，结构层则提供残基空间信息。把这些训练信号放在一起，可以让表示同时接触多种生物描述，后续再用相应任务检验。",
+          "sourceIds": [
+            "luca"
+          ],
+          "seconds": 50,
+          "contentId": "04-08",
+          "figure": {
+            "path": "assets/luca1.png",
+            "crop": [
+              0.13588208198986643,
+              0.6299496040316774,
+              0.41455550437586364,
+              0.14758819294456443
+            ],
+            "alt": "LucaOne怎样组织多层次训练信号",
+            "credit": "LucaOne, Nat. Mach. Intell. 2025，Fig. 1",
+            "sourceUrl": "https://www.nature.com/articles/s42256-025-01044-4"
+          },
+          "layout": "paper-wide",
+          "caption": "输出向量可连接token级与片段级分类头"
+        },
+        {
+          "type": "figure",
+          "title": "按输入对象整理整张模型地图",
+          "body": [
+            "按生物对象与目标输出组织模型地图。"
+          ],
+          "notes": "这张表回顾整门课。DNA与RNA首先按核酸序列进入模型，蛋白质可以进一步提供结构和功能条件，细胞则用表达与上下文组织输入。每一行都应继续细分任务：同样是蛋白序列，可能用于表示学习，也可能用于生成或结构预测。输入对象帮助定位模型类别，目标输出帮助完成最后选择。",
+          "sourceIds": [
+            "survey",
+            "omics",
+            "multimodal"
+          ],
+          "seconds": 50,
+          "table": {
+            "headers": [
+              "研究对象",
+              "典型输入",
+              "代表模型"
+            ],
+            "rows": [
+              [
+                "DNA/RNA",
+                "核酸序列",
+                "NT / Evo 2 / RiNALMo"
+              ],
+              [
+                "蛋白质",
+                "序列、结构或功能",
+                "ESM3 / AlphaFold 3"
+              ],
+              [
+                "细胞",
+                "表达与上下文",
+                "scGPT / Nicheformer"
+              ]
+            ]
+          },
+          "contentId": "04-09"
+        },
+        {
+          "type": "concept",
+          "title": "把研究问题转换成输入—输出接口",
+          "body": [
+            "分类、回归和结构任务，需要不同形式的输出。"
+          ],
+          "notes": "模型地图还可以按输出接口重新组织。分类把一个对象映射到类别，回归把对象映射到连续数值，排序比较候选。位置任务需要保留每个位置的信息，结构任务还要组织空间关系。把这些接口写清楚，才能决定如何读取编码器表示，以及是否需要生成器或专门结构模块。",
+          "sourceIds": [
+            "survey",
+            "luca"
+          ],
+          "seconds": 50,
+          "contentId": "04-10",
+          "diagram": {
+            "kind": "task-outputs"
+          },
+          "layout": "visual",
+          "caption": "先明确要得到类别、数值还是坐标，再确定任务接口"
+        },
+        {
+          "type": "case",
+          "title": "变异评分的模型选型",
+          "body": [
+            "参考与变异序列采用相同窗口和分词设置。"
+          ],
+          "notes": "变异评分从一对序列开始。为了让差别对应这次变异，输入窗口、方向和编码方式要一致。NT类表示模型可以比较编码结果，生成式模型则可以比较概率相关分数。评分接到任务以后，再用表达、调控活性或其他对应标签评价，形成清楚的候选优先级。",
+          "sourceIds": [
+            "nt",
+            "evo2",
+            "dnabench"
+          ],
+          "diagram": {
+            "kind": "variant-scores"
+          },
+          "seconds": 50,
+          "contentId": "04-11",
+          "layout": "visual",
+          "caption": "得分差用于比较候选，具体得分定义取决于模型和研究任务"
+        },
+        {
+          "type": "concept",
+          "title": "变异比较怎样构成一个评分接口",
+          "body": [
+            "表示差异、任务得分、序列概率",
+            "分别形成可比较的变异评分"
+          ],
+          "notes": "可以把变异评分实现成两个相同的计算分支：参考序列走一次，变异序列再走一次。接着比较表示或任务输出。两条分支使用相同配置，使主要差异来自输入变化。若读取生成概率，就把概率变化作为任务中的一个评分，再用对应标签分析它与研究目标之间的关系。",
+          "sourceIds": [
+            "nt",
+            "evo2",
+            "dnabench"
+          ],
+          "diagram": {
+            "kind": "fusion",
+            "labels": [
+              "参考序列的表示／分数",
+              "变异序列的表示／分数",
+              "差异与候选排序"
+            ]
+          },
+          "seconds": 50,
+          "contentId": "04-12"
+        },
+        {
+          "type": "case",
+          "title": "细胞注释的模型选型",
+          "body": [
+            "参考标签用于适配分类头，新细胞经同样的编码后得到注释。"
+          ],
+          "notes": "细胞注释的关键接口是表达矩阵。先确认每一列的基因身份，再使用与模型一致的处理流程。参考标签比较少时，可以先在固定表示上训练任务头；有足够数据和资源时，再比较微调方案。最后用逐类结果和跨样本表现决定哪种配置适合当前研究。",
+          "sourceIds": [
+            "scgpt",
+            "geneformer",
+            "cellbench"
+          ],
+          "diagram": {
+            "kind": "annotation"
+          },
+          "seconds": 50,
+          "contentId": "04-13",
+          "layout": "visual",
+          "caption": "训练与推断分开组织，测试细胞来自独立样本"
+        },
+        {
+          "type": "concept",
+          "title": "标签与资源怎样影响细胞任务适配",
+          "body": [
+            "适配方式决定编码器是否参与参数更新。"
+          ],
+          "notes": "三种方案可以按数据和资源逐步比较。固定表示先计算一次向量，之后很快就能换分类器；部分参数微调让表示适应新数据，同时控制更新规模；完整微调则联合优化模型。选择时把标签量、验证表现、训练时间和显存消耗放在同一张记录表里，会比只看一个最终分数更实用。",
+          "sourceIds": [
+            "scgpt",
+            "cellbench"
+          ],
+          "seconds": 50,
+          "contentId": "04-14",
+          "diagram": {
+            "kind": "trainable-blocks"
+          },
+          "layout": "visual",
+          "caption": "固定表示只训练任务头；微调同时更新部分或全部编码器"
+        },
+        {
+          "type": "figure",
+          "title": "复合物结构的模型选型",
+          "body": [
+            "输入明确的分子组分",
+            "定位候选的接触区域"
+          ],
+          "notes": "复合物结构任务先列出研究中有哪些分子。模型给出候选以后，按单体、链间关系和界面的顺序阅读。若研究某个结合区域，就围绕这个区域检查接触、相对位置和置信信息。下一页把接触分析进一步展开，看看坐标输出如何变成容易比较的界面特征。",
+          "sourceIds": [
+            "af3"
+          ],
+          "seconds": 50,
+          "contentId": "04-15",
+          "figure": {
+            "path": "assets/af31.png",
+            "crop": [
+              0.05907372400756144,
+              0.0,
+              0.3827977315689981,
+              0.30811470408785846
+            ],
+            "alt": "选型题三：复合物结构",
+            "credit": "Abramson et al., Nature 2024，Fig. 1",
+            "sourceUrl": "https://www.nature.com/articles/s41586-024-07487-w"
+          },
+          "layout": "paper-side",
+          "caption": "输入链与分子身份决定后续界面阅读的对象"
+        },
+        {
+          "type": "figure",
+          "title": "从坐标到界面特征还要做什么",
+          "body": [
+            "定位配体周围的残基",
+            "把接触区域映射回序列位置"
+          ],
+          "notes": "结构坐标是一份几何数据。读取时先区分链和分子，再定位研究中的区域。通过距离或接触关系，可以把界面对应回序列中的哪些残基，也可以比较配体在不同候选中的位置。对多个候选采用相同规则，才能把漂亮的结构图进一步变成有顺序的研究判断。",
+          "sourceIds": [
+            "af3"
+          ],
+          "seconds": 50,
+          "contentId": "04-16",
+          "figure": {
+            "path": "assets/af31.png",
+            "crop": [
+              0.5198487712665406,
+              0.0,
+              0.2551984877126654,
+              0.2745576571079927
+            ],
+            "alt": "从坐标到界面特征还要做什么",
+            "credit": "Abramson et al., Nature 2024，Fig. 1",
+            "sourceUrl": "https://www.nature.com/articles/s41586-024-07487-w"
+          },
+          "layout": "paper-side",
+          "caption": "在局部构象中定位接触残基与配体"
+        },
+        {
+          "type": "compare",
+          "title": "任务不同，比较项也不同",
+          "body": [
+            "不同研究目标，对应不同输入、输出与评价对象。"
+          ],
+          "notes": "变异评分、细胞注释和结构预测都可以使用大模型，但它们的数据和目标不同。比较时先统一任务定义，再决定适配方式和指标。这个表也是课程材料讨论时很有用的工具：只要填好输入、输出和标签，就能快速判断某个模型与手头资料是否匹配。",
+          "sourceIds": [
+            "dnabench",
+            "cellbench",
+            "af3"
+          ],
+          "table": {
+            "headers": [
+              "任务",
+              "输入",
+              "要检查的证据"
+            ],
+            "rows": [
+              [
+                "变异评分",
+                "核酸序列对",
+                "独立标签与划分"
+              ],
+              [
+                "细胞注释",
+                "表达矩阵",
+                "跨样本标签表现"
+              ],
+              [
+                "结构预测",
+                "分子组分",
+                "结构与界面质量"
+              ]
+            ]
+          },
+          "seconds": 50,
+          "contentId": "04-17"
+        },
+        {
+          "type": "process",
+          "title": "零样本、探测与微调",
+          "body": [
+            "零样本、线性探针与微调，使用不同标签和参数更新范围。"
+          ],
+          "notes": "零样本通常直接读取模型已有的评分或表示能力；线性探测固定编码器，只学习简单任务头；微调进一步更新模型。三种方式适合不同的数据和资源条件。使用一个模型时，可以先明确适配设置，再比较任务结果与运行成本，选择最合适的配置。",
+          "sourceIds": [
+            "dnabench",
+            "cellbench"
+          ],
+          "seconds": 50,
+          "table": {
+            "headers": [
+              "适配方式",
+              "更新什么",
+              "目标任务训练"
+            ],
+            "rows": [
+              [
+                "零样本",
+                "不更新模型",
+                "不使用目标任务标签"
+              ],
+              [
+                "线性探测",
+                "仅训练线性任务头",
+                "使用目标任务标签"
+              ],
+              [
+                "微调",
+                "部分或全部模型",
+                "按任务训练与验证"
+              ]
+            ]
+          },
+          "contentId": "04-18"
+        },
+        {
+          "type": "concept",
+          "title": "选型还要记录运行成本与复用条件",
+          "body": [
+            "记录资源开销与关键配置，方便复现同一研究流程。"
+          ],
+          "notes": "完成能力匹配以后，还要看实际运行条件。序列窗口影响输入规模，批次大小影响吞吐与显存，模型和tokenizer版本影响复现。若要用于社区实践课，最好先确定一个可以完整运行的最小任务，再逐步扩大数据量。这样能力、资源与可复用性都能进入选择说明。",
+          "sourceIds": [
+            "onescience",
+            "survey"
+          ],
+          "table": {
+            "headers": [
+              "记录项",
+              "为什么需要",
+              "怎样比较"
+            ],
+            "rows": [
+              [
+                "数据与窗口",
+                "决定一次输入的规模",
+                "固定任务后比较配置"
+              ],
+              [
+                "模型与适配",
+                "决定参数更新和资源需求",
+                "记录检查点与更新范围"
+              ],
+              [
+                "运行与结果",
+                "复查和再次运行的条件",
+                "保留环境、耗时和输出"
+              ]
+            ]
+          },
+          "seconds": 50,
+          "contentId": "04-19"
+        },
+        {
+          "type": "case",
+          "title": "把模型接入可追溯工作流",
+          "body": [
+            "把结果与产生它的数据、模型和配置对应保存。"
+          ],
+          "notes": "模型选好以后，把一次使用整理成完整记录。序列任务保留窗口和tokenizer，细胞任务保留基因对齐与预处理，结构任务保留组分和候选选择规则。再把检查点、适配方式和指标连接起来。这样换模型、换数据或者继续课程实践时，都能够沿着同一条记录恢复过程。",
+          "sourceIds": [
+            "onescience",
+            "multimodal"
+          ],
+          "seconds": 50,
+          "contentId": "04-20",
+          "table": {
+            "headers": [
+              "记录对象",
+              "保留的信息"
+            ],
+            "rows": [
+              [
+                "数据",
+                "来源与预处理版本"
+              ],
+              [
+                "模型",
+                "检查点与分词设置"
+              ],
+              [
+                "推断",
+                "窗口、批次与采样配置"
+              ],
+              [
+                "结果",
+                "输出、指标及运行环境"
+              ]
+            ]
+          }
+        },
+        {
+          "type": "concept",
+          "title": "读一篇新论文时先找这三组信息",
+          "body": [
+            "上部：训练数据及其组合",
+            "中部：输入表示与训练目标"
+          ],
+          "notes": "回看LucaOne总览图的上、中、下三个区域。前面已分别放大讲过数据来源、输入嵌入与任务头。现在把这些部分放回整体：上部组织核酸与蛋白质数据，中部给出编码与训练目标，下部展示迁移任务。阅读新论文时，先找这三组信息，再进入与研究问题相关的细节。",
+          "sourceIds": [
+            "luca"
+          ],
+          "seconds": 50,
+          "contentId": "04-21",
+          "layout": "paper-side",
+          "caption": "下部列出下游任务；读图时把数据、训练与应用对应起来",
+          "figure": {
+            "path": "assets/luca1.png",
+            "crop": [
+              0,
+              0,
+              1,
+              1
+            ],
+            "alt": "LucaOne总览图中的数据、训练与任务",
+            "credit": "LucaOne，Nat. Mach. Intell. 2025，Fig. 1",
+            "sourceUrl": "https://www.nature.com/articles/s42256-025-01044-4"
+          }
+        },
+        {
+          "type": "case",
+          "title": "三种研究需求的选型结果",
+          "body": [
+            "三种研究需求，分别形成可执行的模型方案。"
+          ],
+          "notes": "第一类需求是比较DNA变异，可以从序列模型的表示或概率得到得分。第二类需求是细胞注释，从表达矩阵得到细胞向量，再连接类型分类器。第三类需求是复合物结构，明确组分后读取坐标和界面。三种方案分别对应不同的输入接口、模型输出和评价指标。",
+          "sourceIds": [
+            "survey",
+            "dnabench",
+            "cellbench"
+          ],
+          "seconds": 65,
+          "contentId": "04-22",
+          "table": {
+            "headers": [
+              "研究需求",
+              "模型路线",
+              "读取结果"
+            ],
+            "rows": [
+              [
+                "DNA变异",
+                "NT／Evo 2",
+                "表示或序列得分"
+              ],
+              [
+                "细胞注释",
+                "scGPT",
+                "细胞类型"
+              ],
+              [
+                "复合物结构",
+                "AlphaFold 3",
+                "坐标与接触区域"
+              ]
+            ]
+          }
+        },
+        {
+          "type": "summary",
+          "title": "整门课程回顾",
+          "body": [
+            "序列、蛋白质、细胞有不同输入",
+            "统一按数据、模型、适配和评价选型"
+          ],
+          "notes": "整门课走过了四个尺度：核酸序列、蛋白质、细胞和跨对象表示。每到一个尺度，我们都重新识别输入、模型和输出。希望你带走的是一张能继续扩展的模型地图，以及把新材料组织成研究方案的方法。后续可以选择其中一个模型，进一步做数据处理、官方代码运行和结果分析专题。",
+          "sourceIds": [
+            "survey",
+            "nt",
+            "esm3",
+            "scgpt",
+            "luca"
+          ],
+          "seconds": 50,
+          "contentId": "04-23"
+        },
+        {
+          "type": "references",
+          "title": "延伸阅读与后续专题",
+          "body": [],
+          "notes": "课程之后可以沿两条路径继续。一条是阅读LucaOne与组学基础模型综述，完善跨对象的模型地图；另一条是选择一个公开任务，结合官方代码与OneScience等资源入口做实践。实践课应围绕一个具体输入和输出展开，逐步解释数据处理、调用接口与结果分析。",
+          "sourceIds": [
+            "luca",
+            "survey",
+            "omics",
+            "multimodal",
+            "onescience"
+          ],
+          "seconds": 20,
+          "contentId": "04-24"
+        }
+      ],
+      "durationSeconds": 1080,
+      "estimatedTiming": {
+        "status": "estimated_not_rehearsed",
+        "speechRateChineseCharsPerMinute": [
+          170,
+          210
+        ],
+        "plannedPauseSeconds": 120,
+        "targetMinutes": 18
+      }
+    }
+  ],
+  "sourceTemplate": "../../templates/16-灰色简约风科研报告PPT模板.pptx",
+  "templateProfile": "grey",
+  "minimumSlidesPerLesson": 21,
+  "exampleProvenance": "课堂算例的序列、矩阵与配对表用于解释输入编码和计算步骤；论文案例在相关页以作者来源标识。",
+  "courseId": "biology-foundation-models",
+  "templateId": "wps-16",
+  "includeExercises": false,
+  "visualFirst": true
+}
