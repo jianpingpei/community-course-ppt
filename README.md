@@ -4,7 +4,7 @@
 
 **不捆绑PPT模板。** 同一门课的各课时保持设计一致，新课程按内容自主设计。生物课程只作为example，不是默认样式或运行依赖。
 
-[Skill指引](skills/community-course-ppt/SKILL.md) · [上传ZIP](release/community-course-ppt.zip) · [生物课程](example/biology-foundation-models/README.md) · [天文短预览](example/astronomy-preview/README.md)
+[Skill指引](skills/community-course-ppt/SKILL.md) · [上传ZIP](release/community-course-ppt.zip) · [生物课程](example/biology-foundation-models/README.md)
 
 ## 上传到 WorkBuddy
 
@@ -57,7 +57,6 @@ skills/community-course-ppt/  核心指引、按需参考、公开工具与测�
 scripts/                     安装、打包和重建样例的薄入口
 release/community-course-ppt.zip  当前上传包
 example/biology-foundation-models/  四课时完整样例与独立设计源码
-example/astronomy-preview/          5页短预览，用于验证跨领域设计
 ```
 
 旧模板库和自动分配逻辑已移除。旧templateId/themeId等配置需要迁移，不再悄悄套用灰色模板。用户明确提供PPTX模板时，Agent先分析原稿再适配，不承诺任意模板自动复刻。
